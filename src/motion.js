@@ -12,7 +12,8 @@ export function initMotion({reduced,collection,onFrame}){
  const header=document.querySelector('.site-header');
  const updateHeader=()=>header.classList.toggle('is-scrolled',scrollY>12);
  addEventListener('scroll',updateHeader,{passive:true});updateHeader();
- const event=document.querySelector('#evento'),lenis=reduced?null:new Lenis({lerp:.08,smoothWheel:true,wheelMultiplier:.95});
+ // La reserva pausa el recorrido, pero mantiene el scroll nativo del documento.
+ const event=document.querySelector('#evento'),lenis=reduced?null:new Lenis({lerp:.08,smoothWheel:true,wheelMultiplier:.95,virtualScroll:()=>!paused});
  const passport=document.querySelector('.passport-story'),rewards=document.querySelector('#recompensas'),windowElement=document.querySelector('.collection-window');
  const count=document.querySelectorAll('.collection-card').length,total=storyDistance(count);
  const previous=document.querySelector('[data-collection-prev]'),next=document.querySelector('[data-collection-next]');
@@ -65,7 +66,7 @@ export function initMotion({reduced,collection,onFrame}){
  previous.addEventListener('click',prevClick);next.addEventListener('click',nextClick);windowElement.addEventListener('keydown',keys);
  windowElement.addEventListener('wheel',horizontal,{passive:false});windowElement.addEventListener('pointerdown',down);windowElement.addEventListener('pointermove',move,{passive:false});windowElement.addEventListener('pointerup',up);windowElement.addEventListener('pointercancel',up);windowElement.addEventListener('click',cancelClick,true);
  const tick=time=>{
-  if(paused||document.hidden)return;lenis?.raf(time*1000);
+  if(document.hidden)return;lenis?.raf(time*1000);if(paused)return;
   const story=eventStory(state.progress,count),wash=washingState(state.washing);
   const handoffActive=cinematic&&document.body.classList.contains('three-ready')&&state.washing>=.9&&scrollY<event.offsetTop;
   const handoff={active:handoffActive,opacity:handoffActive?wash.handoff:1};
@@ -83,5 +84,5 @@ export function initMotion({reduced,collection,onFrame}){
  gsap.ticker.add(tick);
  function refresh(){configure();lenis?.resize();ScrollTrigger.refresh()}
  document.fonts.ready.then(refresh);addEventListener('resize',refresh);addEventListener('load',refresh,{once:true});
- return {refresh,scrollTo,rewardsStart:()=>cinematic?position(REWARDS_READY/total):event.offsetTop+rewards.offsetTop,pause(value){paused=value;value?lenis?.stop():lenis?.start()},dispose(){gsap.ticker.remove(tick);context.revert();sectionTriggers.forEach(t=>t.kill());lenis?.destroy();removeEventListener('resize',refresh);removeEventListener('load',refresh);removeEventListener('scroll',updateHeader);header.classList.remove('is-scrolled');previous.removeEventListener('click',prevClick);next.removeEventListener('click',nextClick);windowElement.removeEventListener('keydown',keys);windowElement.removeEventListener('wheel',horizontal);windowElement.removeEventListener('pointerdown',down);windowElement.removeEventListener('pointermove',move);windowElement.removeEventListener('pointerup',up);windowElement.removeEventListener('pointercancel',up);windowElement.removeEventListener('click',cancelClick,true);windowElement.removeEventListener('scroll',nativeScroll);document.body.classList.remove('has-event-story','has-passport-handoff','has-live-passport');document.body.style.removeProperty('--handoff-copy')}};
+ return {refresh,scrollTo,rewardsStart:()=>cinematic?position(REWARDS_READY/total):event.offsetTop+rewards.offsetTop,pause(value){paused=value;lenis?.scrollTo(scrollY,{immediate:true,force:true})},dispose(){gsap.ticker.remove(tick);context.revert();sectionTriggers.forEach(t=>t.kill());lenis?.destroy();removeEventListener('resize',refresh);removeEventListener('load',refresh);removeEventListener('scroll',updateHeader);header.classList.remove('is-scrolled');previous.removeEventListener('click',prevClick);next.removeEventListener('click',nextClick);windowElement.removeEventListener('keydown',keys);windowElement.removeEventListener('wheel',horizontal);windowElement.removeEventListener('pointerdown',down);windowElement.removeEventListener('pointermove',move);windowElement.removeEventListener('pointerup',up);windowElement.removeEventListener('pointercancel',up);windowElement.removeEventListener('click',cancelClick,true);windowElement.removeEventListener('scroll',nativeScroll);document.body.classList.remove('has-event-story','has-passport-handoff','has-live-passport');document.body.style.removeProperty('--handoff-copy')}};
 }
