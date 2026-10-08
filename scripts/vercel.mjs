@@ -1,0 +1,13 @@
+import {spawn} from 'node:child_process';
+import path from 'node:path';
+import fs from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const cliFolder=path.join(root,'.deploy-tools','cli');
+await fs.mkdir(cliFolder,{recursive:true});
+await fs.writeFile(path.join(cliFolder,'package.json'),JSON.stringify({name:'fairplay-deploy-tools',private:true}));
+const args=['C:/Program Files/nodejs/node_modules/npm/bin/npm-cli.js','exec','--yes','--cache',path.join(root,'.deploy-tools','npm-cache'),'--package','vercel','--','vercel','--cwd',root,'--global-config',path.join(root,'.deploy-tools','vercel-config'),...process.argv.slice(2)];
+const cli=spawn(process.execPath,args,{cwd:cliFolder,stdio:'inherit',env:{...process.env,PATH:path.dirname(process.execPath)+';'+process.env.PATH,VERCEL_TELEMETRY_DISABLED:'1'}});
+console.log('Vercel launcher PID: '+cli.pid);
+await fs.writeFile(path.join(cliFolder,'launcher-pid.json'),JSON.stringify({pid:cli.pid}));
+cli.on('exit',code=>process.exitCode=code??1);

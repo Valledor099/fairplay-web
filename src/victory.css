@@ -1,0 +1,75 @@
+.victory-section{position:relative;height:900svh;background:var(--noche)}
+.victory-sticky{height:100svh;position:sticky;top:0;overflow:hidden;isolation:isolate}
+.victory-visual{position:absolute;inset:0;pointer-events:none}
+.victory-photo{position:absolute;left:0;top:0;display:block;max-width:none;will-change:transform,filter}
+.victory-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#051014c0,transparent 44%,transparent 55%,#05101470),linear-gradient(0deg,#051014ee,transparent 22%,transparent 76%,#05101488)}
+.victory-copy{position:absolute;left:7vw;right:7vw;top:34%;width:auto;pointer-events:none}
+.victory-copy h2{font-size:clamp(38px,4.3vw,66px);line-height:1.1;letter-spacing:-.04em}
+.victory-beat{position:absolute;inset:0 auto auto 0;width:min(430px,36vw);opacity:0;visibility:hidden;will-change:transform,opacity}
+.victory-question{left:auto;right:0}
+.victory-beat p{font-size:12px;color:#b6c9be;max-width:340px;margin-top:24px}
+.victory-cue{position:absolute;bottom:42px;left:7vw;right:7vw;display:flex;align-items:end;justify-content:space-between;pointer-events:none;font-size:11px;color:#b6c9be}
+.victory-cue>span:last-child{font-size:24px}
+.victory-loading{position:absolute;right:7vw;bottom:42px;font-size:10px;color:#a6bcb0}
+.victory-loading:empty{display:none}
+.victory-static .victory-section{height:auto}
+.victory-static .victory-sticky{position:relative;height:auto;min-height:900px;padding:120px 7vw 70px}
+.victory-static .victory-copy{position:relative;left:auto;top:auto;width:min(530px,100%);padding-top:400px}
+.victory-static .victory-beat{position:relative;opacity:1!important;visibility:visible!important;transform:none!important}
+.victory-static .victory-question{margin-top:35px}
+.victory-static .victory-copy h2{font-size:38px}
+.victory-static .victory-shade{background:linear-gradient(0deg,#051014 20%,#051014c0 55%,transparent)}
+.victory-static .victory-cue{display:none}
+.victory-static .victory-beat{width:100%}
+.victory-static .victory-visual{height:560px;bottom:auto}
+.victory-static .victory-photo{width:100%;height:100%;object-fit:cover;object-position:center top;will-change:auto}
+@media(max-width:700px){
+ .victory-copy{top:60%;left:7vw;right:7vw;width:auto;max-width:450px}
+ .victory-beat{width:100%}
+ .victory-copy h2{font-size:clamp(35px,8vw,46px);max-width:420px}
+ .victory-beat p{font-size:11px;margin-top:16px;max-width:280px}
+ .victory-shade{background:linear-gradient(0deg,#051014dc,transparent 27%,transparent 52%,#051014c9 85%),linear-gradient(90deg,#05101455,transparent 75%)}
+ .victory-cue,.victory-loading{bottom:30px;font-size:10px}
+ .victory-static .victory-sticky{min-height:1000px;padding-top:80px}
+ .victory-static .victory-copy{padding-top:330px}
+ .victory-static .victory-visual{height:430px;top:0}
+ .victory-static .victory-copy h2{font-size:34px}
+}
+@media(max-height:650px) and (min-width:701px){.victory-copy{top:30%}.victory-copy h2{font-size:42px}}
+
+/* The engraved W shares the continuous photo camera before forming the title. */
+.sportswashing-panel{position:absolute;inset:0;opacity:0;visibility:hidden;pointer-events:none}
+.sportswashing-mural{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform-origin:center;pointer-events:none}
+.sportswashing-paint-stroke{stroke-dasharray:1;stroke-dashoffset:1}
+h2.sportswashing-wordmark{position:absolute;left:0;top:0;width:max-content;white-space:nowrap;font-family:Arial,Helvetica,sans-serif;font-weight:900;font-size:clamp(64px,9.6vw,156px);line-height:1;letter-spacing:-.065em;color:var(--noche);text-transform:uppercase;will-change:transform,opacity}
+.sportswashing-prefix,.sportswashing-suffix{display:inline-block}
+.sportswashing-w{position:relative;display:inline-block;width:.95em;height:.77em;vertical-align:-.01em;margin:0 .015em;letter-spacing:0}
+.sportswashing-w svg{display:block;width:100%;height:100%;overflow:visible}
+.sportswashing-w-ink{fill:currentColor}
+.sportswashing-kicker{position:absolute;left:7vw;top:calc(34% - 38px);color:#163821;font-size:11px;letter-spacing:.025em;text-shadow:0 0 6px #f2f0e6,0 0 12px #f2f0e6}
+.sportswashing-definition{position:absolute;left:61%;right:7%;top:34%;max-width:480px;color:#10261a;pointer-events:auto;isolation:isolate}
+.sportswashing-definition::before{content:'';position:absolute;inset:-25px -30px;background:#f3f0e6ef;filter:blur(18px);z-index:-1}
+.sportswashing-definition h3{font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:600;line-height:1.35;letter-spacing:-.02em;margin-bottom:22px;max-width:300px}
+.sportswashing-definition p{font-size:13px;line-height:1.8;margin-top:17px}
+.sportswashing-definition .context-source{color:#23472c;font-size:10px;margin-top:22px}
+[data-sportswashing-copy]{will-change:transform,opacity}
+.sportswashing-anchor{position:absolute;left:0;width:1px;height:1px;pointer-events:none}
+.victory-static .sportswashing-panel{position:relative;min-height:850px;margin:75px -7vw -70px;padding:100px 7vw;opacity:1;visibility:visible}
+.victory-static h2.sportswashing-wordmark{position:relative;left:auto;top:auto;font-size:9.6vw;transform:none!important;margin:0 0 55px}
+.victory-static .sportswashing-definition{position:relative;left:auto;right:auto;top:auto;max-width:560px}
+.victory-static .sportswashing-kicker{top:65px}
+.victory-static .sportswashing-anchor{position:relative;top:auto!important}
+@media(max-width:700px){
+ h2.sportswashing-wordmark{font-size:9.6vw}
+ .sportswashing-definition{left:7vw;right:7vw;top:235px;max-width:450px}
+ .sportswashing-definition h3{font-size:17px;max-width:310px;margin-bottom:18px}
+ .sportswashing-definition p{font-size:13px;line-height:1.8;margin-top:15px}
+ .sportswashing-definition .context-source{font-size:10px;margin-top:20px}
+ .sportswashing-kicker{top:98px;font-size:9px}
+ .victory-static .sportswashing-panel{min-height:760px;padding-top:90px}
+}
+@media(max-height:700px) and (min-width:701px){
+ .sportswashing-definition{top:29%}
+ .sportswashing-definition p{font-size:12px;line-height:1.75;margin-top:12px}
+ .sportswashing-definition h3{font-size:16px;margin-bottom:14px}
+}

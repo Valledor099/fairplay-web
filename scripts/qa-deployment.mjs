@@ -1,0 +1,36 @@
+import {createRequire} from 'node:module';
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const url=process.argv[2];
+if(!url||!/^https:\/\/[^/]+\.vercel\.app\/?$/.test(url))throw new Error('Expected the Vercel deployment URL');
+const require=createRequire('C:/Users/AgusSanti/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
+const {chromium}=require('playwright');
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const results=[];
+for(const [width,height] of [[1209,884],[390,844]]){
+ const page=await browser.newPage({viewport:{width,height},hasTouch:width<600,isMobile:width<600});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const response=await page.goto(url,{waitUntil:'networkidle'});assert.equal(response.status(),200);
+ await page.waitForFunction(()=>document.body.classList.contains('three-ready'));
+ await page.waitForTimeout(1400);
+ assert.equal(await page.locator('.hero-event-date time').textContent(),'Sábado 12 de diciembre de 2026');
+ assert.equal(await page.locator('[role=timer]').isVisible(),true);
+ await page.screenshot({path:new URL(`../evidence/vercel-hero-${width}.jpg`,import.meta.url).pathname.replace(/^\/(\w:)/,'$1'),type:'jpeg',quality:85});
+ await page.locator('.hero-entry .ticket-cta-button').click();await page.waitForURL('**/#entradas');
+ assert.equal(await page.locator('[data-date],[data-time]').count(),0);
+ await page.locator('#guest-name').fill('Visitante Prueba');await page.locator('#guest-email').fill('prueba@example.com');
+ await page.locator('#booking-form [type=submit]').click();await page.locator('[data-confirm]').click();
+ await page.locator('.confirmation .qr').waitFor();
+ await page.goto(url+'/#recompensas',{waitUntil:'networkidle'});
+ await page.waitForFunction(()=>document.body.classList.contains('three-ready')&&+document.querySelector('#recompensas').style.opacity>.99);
+ await page.waitForTimeout(1400);
+ await page.locator('.collection-card img').evaluateAll(images=>Promise.all(images.map(img=>{img.loading='eager';return img.decode().catch(()=>{})})));
+ const card=page.locator('.collection-card[data-focused=true]');
+ const size=await card.boundingBox();assert.ok(size.height>(width<600?220:420));
+ await page.screenshot({path:new URL(`../evidence/vercel-rewards-${width}.jpg`,import.meta.url).pathname.replace(/^\/(\w:)/,'$1'),type:'jpeg',quality:85});
+ assert.equal(await page.locator('.collection-card').count(),6);
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ assert.deepEqual(errors,[]);results.push({width,height,status:response.status(),passport3d:true,booking:true,photoHeight:Math.round(size.height),errors});
+ await page.close();
+}
+await browser.close();await fs.writeFile(new URL('../evidence/vercel-qa.json',import.meta.url),JSON.stringify({url,results},null,2));console.log(JSON.stringify({url,results},null,2));

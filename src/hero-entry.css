@@ -1,0 +1,39 @@
+.hero #hero-title{position:absolute;top:29%;left:7vw;font-size:clamp(100px,17vw,270px)}
+.hero-entry{position:absolute;right:7vw;bottom:105px;z-index:4;width:340px;color:#fff}
+.hero-ticket-cta{width:100%;height:80px;margin:0 0 28px}
+.hero-ticket-cta .ticket-paper{width:190px;height:112px;bottom:0}
+.hero-ticket-cta .ticket-paper-brand{font-size:28px}
+.hero-ticket-cta .ticket-paper-name{font-size:17px}
+.hero-ticket-cta .ticket-cta-button{position:relative;z-index:2;display:flex;width:100%;min-height:80px;border-radius:4px;background:#c4d1c8;border-color:#e6eee8;padding:22px 26px;box-shadow:0 12px 35px #0005;justify-content:space-between}
+.hero-ticket-cta .ticket-cta-label{font-size:19px;font-weight:700}
+.hero-ticket-cta .ticket-cta-arrow{font-size:33px}
+.countdown-status{font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px;color:#d1ddd6}
+.countdown-digits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-bottom:17px;border-bottom:1px solid #c4d1c84d}
+.countdown-digits>div{display:flex;flex-direction:column;align-items:flex-start;overflow:hidden}
+.countdown-digits span{display:block;font-family:var(--font-display);font-weight:600;font-size:54px;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.countdown-digits small{font-size:9px;margin-top:5px;color:#d1ddd6}
+.hero-event-date{margin-top:14px;font-size:11px;font-weight:600;line-height:1.7}
+.hero-event-date span{display:block;color:#c4d1c8;font-size:10px;font-weight:400}
+.hero-media::after{background:linear-gradient(180deg,transparent 35%,#0510142e 50%,#051014bd 85%,#051014 100%)}
+.booking-event{margin-top:22px;padding:20px 0;border-top:1px solid #708d814d;border-bottom:1px solid #708d814d}
+.booking-event time{display:block;font-family:var(--font-display);font-size:29px;line-height:1.15;font-weight:600}
+.booking-event>span{display:block;margin-top:7px;color:#c4d1c8;font-size:12px}
+.booking-event p{margin-top:10px;font-size:11px;color:#aec4b9;line-height:1.6}
+.ticket-intro .ticket-event-date{font-size:16px;color:#fcfcfc;font-weight:600}
+@media(max-width:700px){
+ .hero{min-height:780px}
+ .hero #hero-title{top:29%;font-size:24vw;left:7vw}
+ .hero-entry{left:7vw;right:7vw;bottom:170px;width:auto;max-width:340px}
+ .hero-ticket-cta{height:66px;margin-bottom:20px}
+ .hero-ticket-cta .ticket-cta-button{min-height:66px;padding:17px 23px}
+ .hero-ticket-cta .ticket-cta-label{font-size:17px}
+ .hero-ticket-cta .ticket-paper{width:170px;height:98px}
+ .countdown-digits span{font-size:46px}
+ .countdown-digits{gap:12px;padding-bottom:13px}
+ .hero-reveal-control{bottom:75px}
+ .hero-scroll{bottom:25px}
+ .hero-event-date{font-size:10px}
+ .booking-event time{font-size:25px}
+}
+@media(min-width:701px) and (max-height:740px){.hero{min-height:760px}.hero #hero-title{top:25%}}
+@media(prefers-reduced-motion:reduce){.hero-entry *{transition:none}}

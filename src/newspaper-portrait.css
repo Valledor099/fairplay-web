@@ -1,0 +1,101 @@
+/* Portrait broadsheet: a lead story, compact square photos and dense briefs. */
+.victory-sticky>.sportswashing-panel{z-index:3}
+.magazine-world{z-index:4}
+.magazine-world::before,.magazine-world::after{left:2%;top:calc(16% - var(--page-width)*.94*450/3758 - 60px);bottom:-13.5%;width:96%;height:auto;border-radius:0}
+.magazine-world::after{background:linear-gradient(90deg,transparent 34%,#05101408 35%,transparent 36%,transparent 64%,#05101408 65%,transparent 66%)}
+.newspaper-front-header{left:3%;right:3%;top:auto;bottom:calc(84% + 12px);height:auto;border-bottom:3px double var(--noche)}
+.newspaper-front-name{height:auto;aspect-ratio:3758/450;font-size:initial;line-height:1;letter-spacing:normal}
+.newspaper-front-name img{display:block;width:100%;height:100%;object-fit:contain}
+.newspaper-front-edition{font-size:10px;line-height:1.2;padding:3px 0}
+.newspaper-front-banner{font-size:13px;line-height:1.1;padding:4px 7px}
+.newspaper-front-banner span:last-child{font-size:10px}
+.newspaper-sport-summary{display:grid;grid-template-columns:84px 1fr;grid-template-rows:auto 1fr auto;gap:5px 12px;padding:7px 5px;background:#708d8108}
+.newspaper-sport-summary h3{grid-column:1/-1;font-family:'Times New Roman',Times,serif;font-size:42px;font-weight:700;line-height:1.05;text-transform:uppercase;letter-spacing:-.035em}
+.newspaper-sport-summary figure{grid-column:1;grid-row:2/4;width:84px;height:84px;aspect-ratio:1;margin:0}
+.newspaper-sport-summary img{width:100%;height:100%;object-fit:cover;object-position:left center}
+.newspaper-sport-summary>p{grid-column:2;font-family:Georgia,serif;font-size:10.5px;line-height:1.3;text-align:left;margin:0}
+.newspaper-sport-summary .context-source{grid-column:2;font-size:7px;line-height:1.2;margin:0}
+.news-gallery-cases .news-photo{padding:3px 4px;display:flex;flex-direction:column;border-bottom:1px solid #05101445}
+.news-gallery-cases .news-photo>h3,.news-gallery-cases .news-photo-tennis>h3,.news-gallery-cases .news-photo-f1>h3{font-family:'Times New Roman',Times,serif;font-size:30px;line-height:1.04;letter-spacing:-.025em;margin:0}
+.news-gallery-cases .news-photo figure,.news-gallery-cases .news-photo-tennis figure,.news-gallery-cases .news-photo-f1 figure{position:static;width:100%;height:auto;margin:5px 0 1px;flex-shrink:0}
+.news-gallery-cases .news-photo img,.news-gallery-cases .news-photo-argentina img,.news-gallery-cases .news-photo-f1 img{width:112px;height:112px;aspect-ratio:1;object-fit:cover;object-position:center;filter:grayscale(1) contrast(1.05);mix-blend-mode:multiply}
+.news-gallery-cases .news-photo figcaption{font-size:9px;line-height:1.3;margin-top:4px;max-width:100%}
+.news-gallery-cases .news-date{font-size:11px;line-height:1.3;margin:6px 0}
+.news-gallery-cases .news-photo-copy{font-size:16px;line-height:1.4}
+.news-gallery-cases .news-photo-copy>.newspaper-body{font-size:16px;line-height:1.4;text-align:left;hyphens:auto;margin:6px 0}
+.news-gallery-cases .news-photo .context-source{display:block;width:fit-content;font-size:10px;line-height:1.3;margin:8px 0 0}
+.news-gallery-cases .news-photo-argentina .context-source+.context-source{margin-left:0}
+.news-gallery-cases .news-sources{gap:5px}
+.newspaper-background-news article{filter:blur(2.3px);padding:3px 2px;border-top:1px solid #05101460;overflow:hidden}
+.newspaper-background-news article>p{display:block;font-size:5px;line-height:1.1;margin:0 0 2px;letter-spacing:0}
+.newspaper-background-news h3{font-size:17px;font-weight:700;line-height:1.1;margin:0 0 5px;letter-spacing:-.02em}
+.newspaper-background-news article img{display:block;float:right;width:22px;height:22px;object-fit:cover;filter:grayscale(1);margin:0 0 3px 3px}
+.newspaper-background-news article>div{font-size:11px;line-height:1.35;text-align:justify;column-count:1;hyphens:auto}
+.newspaper-background-news article:nth-last-child(-n+2){padding:0;border-top:0}
+.newspaper-background-news article:nth-last-child(-n+2)>p,.newspaper-background-news article:nth-last-child(-n+2)>div{display:none}
+.newspaper-background-news article:nth-last-child(-n+2) h3{font-size:6px}
+.newspaper-event-invitation{padding:10px 5px;border-top:3px double var(--noche);background:transparent;display:block;overflow:visible}
+.event-news-copy{width:60%;max-width:620px;text-align:left;will-change:opacity}
+.event-news-copy>p,.event-news-copy>h3{margin:0 0 7px}
+.newspaper-event-invitation h3{font-size:30px;line-height:1.05;margin:0}
+.newspaper-event-invitation>p{margin:0;max-width:none;text-align:left}
+.newspaper-event-invitation .event-news-kicker{font-size:10px;line-height:1.3;text-transform:uppercase;letter-spacing:.08em}
+.newspaper-event-invitation .event-news-deck{font-size:16px;line-height:1.35;font-weight:600}
+.newspaper-event-invitation .event-news-byline{font-size:10px;line-height:1.3;font-style:italic}
+.event-news-body{font-family:Georgia,serif;font-size:14px;line-height:1.4}
+.event-news-body p{margin:0 0 6px}
+.newspaper-event-invitation .event-news-passport{position:absolute;left:68%;top:15%;width:30%;height:48%;margin:0}
+.event-news-passport img{width:100%;height:100%;object-fit:contain;filter:none;mix-blend-mode:normal}
+.event-news-passport figcaption{position:absolute;top:calc(50% + var(--passport-photo-height,100%)/2);left:0;width:100%;font-family:Georgia,serif;font-size:10px;line-height:1.4;margin-top:8px;text-align:left}
+.newspaper-event-invitation .event-news-details{font-size:10px;line-height:1.3;border-top:1px solid #05101445;padding-top:5px}
+.newspaper-end-note{display:none}
+.magazine-world>.sportswashing-panel{z-index:5;overflow:hidden}
+.sportswashing-panel::after{display:none}
+.newspaper-reading-haze{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);mask-image:radial-gradient(circle var(--reading-radius,330px) at var(--reading-x,50%) var(--reading-y,52%),transparent 88%,#000 100%);-webkit-mask-image:radial-gradient(circle var(--reading-radius,330px) at var(--reading-x,50%) var(--reading-y,52%),transparent 88%,#000 100%)}
+.newspaper-reading-haze::after{content:'';position:absolute;left:var(--reading-x,50%);top:var(--reading-y,52%);width:calc(var(--reading-radius,330px)*2);height:calc(var(--reading-radius,330px)*2);border:1px solid #708d8170;border-radius:50%;transform:translate(-50%,-50%);box-sizing:border-box}
+.victory-static .newspaper-event-invitation{display:block;position:relative;inset:auto;width:100%;height:auto;min-height:450px;max-width:1000px;padding:25px;margin-top:50px;opacity:1;visibility:visible;filter:none;transform:none}
+.victory-static .newspaper-event-invitation .event-news-passport{top:35px;height:200px}
+.victory-static .event-news-passport figcaption{position:static}
+.has-passport-handoff .event-sticky{position:fixed;inset:0;z-index:16;height:100svh;pointer-events:none}
+.has-passport-handoff .event-stage{background:transparent}
+.has-passport-handoff #passport-scene{pointer-events:none}
+.has-passport-handoff.has-live-passport #passport-scene{pointer-events:auto}
+.has-passport-handoff .event-copy,.has-passport-handoff .event-bottom{opacity:var(--handoff-copy,0)}
+.has-passport-handoff #model-loading{display:none}
+.news-gallery-space{background:var(--noche)}
+.victory-static .news-gallery-cases .news-photo-copy>.newspaper-body{font-size:15px;line-height:1.6}
+.victory-static .news-gallery-cases .news-photo .context-source{font-size:12px;line-height:1.5}
+@media(max-width:700px){
+ .newspaper-front-header{height:auto;top:auto}
+ .newspaper-front-name{font-size:initial}
+ .newspaper-front-edition{font-size:5px}
+ .newspaper-front-banner{font-size:6px}
+ .newspaper-sport-summary{grid-template-columns:62px 1fr;gap:5px 8px;padding:6px 3px}
+ .newspaper-sport-summary h3{font-size:27px;letter-spacing:-.04em}
+ .newspaper-sport-summary figure{width:62px;height:62px}
+ .newspaper-sport-summary>p{font-size:10px;line-height:1.4}
+ .news-gallery-cases .news-photo{padding:4px 3px}
+ .news-gallery-cases .news-photo>h3,.news-gallery-cases .news-photo-tennis>h3,.news-gallery-cases .news-photo-f1>h3{font-size:19px}
+ .news-gallery-cases .news-photo img,.news-gallery-cases .news-photo-argentina img,.news-gallery-cases .news-photo-f1 img{width:72px;height:72px}
+ .news-gallery-cases .news-photo-copy>.newspaper-body{font-size:12px;line-height:1.4}
+ .news-gallery-cases .news-photo figcaption{font-size:7px}
+ .news-gallery-cases .news-date{font-size:8px}
+ .news-gallery-cases .news-photo .context-source{font-size:8px}
+ .newspaper-event-invitation{padding:8px 3px;gap:6px}
+ .newspaper-event-invitation h3{font-size:24px}
+ .newspaper-event-invitation .event-news-deck{font-size:13px;line-height:1.35}
+ .newspaper-event-invitation .event-news-kicker,.newspaper-event-invitation .event-news-byline,.newspaper-event-invitation .event-news-details{font-size:9px}
+ .event-news-body{font-size:12px;line-height:1.4}
+ .event-news-copy{width:62%}
+ .event-news-passport figcaption{font-size:8px}
+ .newspaper-background-news article>div{font-size:8px}
+ .newspaper-background-news h3{font-size:12px}
+ .newspaper-background-news article img{width:16px;height:16px}
+}
+@media(max-width:360px){
+ .news-gallery-cases .news-photo>h3,.news-gallery-cases .news-photo-tennis>h3,.news-gallery-cases .news-photo-f1>h3{font-size:17px}
+ .news-gallery-cases .news-photo img,.news-gallery-cases .news-photo-argentina img,.news-gallery-cases .news-photo-f1 img{width:64px;height:64px}
+ .news-gallery-cases .news-photo-copy>.newspaper-body{font-size:11px;line-height:1.35}
+ .news-gallery-cases .news-photo figcaption{font-size:6px}
+ .news-gallery-cases .news-photo .context-source{font-size:7px}
+}

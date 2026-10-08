@@ -1,0 +1,44 @@
+{
+  "retrieved": "2026-10-06",
+  "assets": [
+    {
+      "file": "saudi-f1.webp",
+      "original": "saudi-f1.jpg",
+      "photo": "https://www.fia.com/sites/default/files/news/main_image/00121044_139.jpg",
+      "article": "https://www.fia.com/news/f1-hamilton-wins-incident-packed-saudi-arabian-grand-prix-level-title-fight-verstappen",
+      "credit": "Cobertura FIA, GP Arabia Saudita, 2021",
+      "rights": "Editorial photograph published by FIA; no open license asserted.",
+      "size": [
+        1400,
+        933
+      ],
+      "bytes": 74586
+    },
+    {
+      "file": "six-kings.webp",
+      "original": "six-kings.jpg",
+      "photo": "https://tennis.com/images/articles/a904df23-f413-4b08-ad9d-181ba4be2e09/web.jpg",
+      "article": "https://www.tennis.com/news/articles/jannik-sinner-crowned-king-of-the-six-kings-slam-with-three-set-comeback-against-carlos-alcaraz",
+      "credit": "Fayez Nureldine / AFP / Getty Images, via Tennis.com",
+      "rights": "Editorial photograph, copyright retained by photographer/agency; no open license asserted.",
+      "size": [
+        700,
+        467
+      ],
+      "bytes": 39992
+    },
+    {
+      "file": "argentina-1978.webp",
+      "original": "argentina-1978.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Saludo_tarantini_videla.jpg",
+      "article": "https://commons.wikimedia.org/wiki/File:Saludo_tarantini_videla.jpg",
+      "credit": "El Grafico / Wikimedia Commons, unknown photographer, 21 June 1978",
+      "rights": "Commons identifies public domain in Argentina and notes different US status; no worldwide open license asserted.",
+      "size": [
+        1140,
+        767
+      ],
+      "bytes": 80210
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+import {createRequire} from 'node:module';
+import fs from 'node:fs/promises';
+const require=createRequire('C:/Users/AgusSanti/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
+const {chromium}=require('playwright');
+const candidates=['C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'];
+let executablePath;
+for(const p of candidates)if(await fs.access(p).then(()=>true).catch(()=>false)){executablePath=p;break}
+const browser=await chromium.launch({headless:true,executablePath});
+const page=await browser.newPage({viewport:{width:1440,height:900}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:4181/#contexto',{waitUntil:'networkidle'});
+await page.waitForTimeout(1500);
+const anchor=await page.evaluate(()=>({hash:location.hash,scroll:scrollY,top:document.querySelector('#contexto').offsetTop}));
+await page.evaluate(()=>{const el=document.querySelector('#contexto');window.scrollTo(0,el.offsetTop+.32*(el.offsetHeight-innerHeight))});
+await page.waitForTimeout(1800);
+await page.screenshot({path:new URL('../evidence/sportswashing-new-desktop-concealment.jpg',import.meta.url).pathname.replace(/^\/(\w:)/,'$1'),type:'jpeg',quality:85});
+const controls=await page.evaluate(()=>({contrast:getComputedStyle(document.querySelector('.washing-footer')).color,light:document.body.classList.contains('washing-light-phase')}));
+await page.locator('.washing-skip').click();await page.waitForTimeout(2000);
+const skip=await page.evaluate(()=>({hash:location.hash,scroll:scrollY,top:document.querySelector('#evento').offsetTop}));
+console.log(JSON.stringify({errors,anchor,controls,skip},null,2));
+await browser.close();
+if(errors.length||Math.abs(anchor.scroll-anchor.top)>2||Math.abs(skip.scroll-skip.top)>2||!controls.light)process.exitCode=1;

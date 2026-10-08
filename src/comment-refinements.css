@@ -1,0 +1,56 @@
+/* The words occupy the dark side; the silencing gesture stays visible. */
+.washing-mechanism-media{opacity:1}
+.washing-mechanism-media img{object-position:65% center;filter:grayscale(.6);opacity:.8}
+.washing-mechanism-media::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#051014f2, #051014a6 35%,#05101412 65%),linear-gradient(0deg,#0510149e,transparent 60%)}
+.washing-hidden-words{align-items:flex-start;padding-left:7vw;font-size:clamp(75px,9vw,170px);color:#fcfcfc}
+
+/* Large arrows turn back and change colour over the complete case row. */
+.washing-case{padding-right:80px}
+.washing-case-arrow{right:0;top:24px;width:54px;height:54px;display:grid;place-items:center;border:1px solid #708d8155;border-radius:50%;color:#a4b7ad;transition:transform .55s cubic-bezier(.2,.8,.2,1),background .35s,color .35s,border-color .35s}
+.washing-case-arrow svg{display:block;width:36px;height:36px}
+.washing-cases-list>li:hover .washing-case-arrow,.washing-case:focus-visible .washing-case-arrow,.washing-case[data-active] .washing-case-arrow{transform:rotate(180deg);color:#051014;background:#c4d1c8;border-color:#c4d1c8}
+.washing-cases-list>li:hover .washing-case-name{color:#c4d1c8}
+
+/* More stage for the photographs; every card keeps just its product name. */
+.has-event-story .photo-collection{padding:108px 4vw 20px}
+.collection-heading h2{font-size:clamp(44px,4.2vw,72px);max-width:720px}
+.collection-hint{margin-top:12px;margin-bottom:6px}
+.has-event-story .collection-card{padding:7px;border-radius:7px}
+.has-event-story .collection-caption{height:42px;min-height:42px;display:flex;align-items:center;padding:5px 3px 0}
+.has-event-story .collection-caption h3{font-size:20px;line-height:1.05}
+.has-event-story .photo-action{font-size:9px;padding:7px 10px}
+.about-heading{display:block}
+.about .about-title{max-width:1200px}
+
+/* Folded admission tickets unfold behind the actual reservation link. */
+.ticket-cta{position:relative;width:min(370px,100%);height:150px;margin-top:60px;isolation:isolate}
+.ticket-burst{position:absolute;inset:0;pointer-events:none;z-index:0}
+.ticket-paper{position:absolute;left:50%;bottom:8px;width:230px;height:136px;border-radius:9px;background:#c4d1c8;color:#16332d;padding:14px 50px 14px 18px;display:grid;grid-template-columns:1fr;align-content:center;gap:3px;transform-origin:50% 105%;transform:translateX(-50%) rotate(var(--fold));box-shadow:0 8px 20px #0005;mask:radial-gradient(circle at 0 50%,transparent 8px,#000 9px) left/51% 100% no-repeat,radial-gradient(circle at 100% 50%,transparent 8px,#000 9px) right/51% 100% no-repeat}
+.ticket-paper:nth-child(2){background:#708d81}
+.ticket-paper:nth-child(3){background:#fcfcfc}
+.ticket-paper:nth-child(4){background:#a7bcb0}
+.ticket-paper:nth-child(5){background:#dce5df}
+.ticket-paper::after{content:'';position:absolute;top:12px;bottom:12px;right:37px;border-left:1px dashed #16332d80}
+.ticket-paper-brand{font-family:var(--font-display);font-size:40px;line-height:1;font-weight:800;letter-spacing:-.06em}
+.ticket-paper-name{font-family:var(--font-display);font-size:20px;line-height:1;font-weight:700;letter-spacing:.035em}
+.ticket-paper-type{font-size:8px;letter-spacing:.15em;margin-top:5px}
+.ticket-paper-stub{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-family:var(--font-display);font-size:18px;font-weight:600}
+.ticket-intro .ticket-cta-button{position:absolute;left:0;bottom:0;z-index:2;width:100%;min-width:0;margin:0;min-height:82px;padding:22px 29px;background:#c4d1c8;color:#051014;overflow:visible;border:1px solid #dce5df;border-radius:3px;font-size:20px;font-weight:700;box-shadow:0 12px 35px #0005;gap:20px;justify-content:space-between;transition:background .35s,transform .35s,box-shadow .35s}
+.ticket-cta-arrow{font-size:34px;font-weight:400;line-height:1}
+.ticket-cta-button:hover,.ticket-cta-button:focus-visible{background:#fcfcfc;transform:translateY(-4px);box-shadow:0 16px 45px #0008}
+.ticket-cta-button:hover .ticket-cta-label,.ticket-cta-button:focus-visible .ticket-cta-label{transform:none}
+.ticket-cta-button:hover .ticket-cta-arrow,.ticket-cta-button:focus-visible .ticket-cta-arrow{transform:translate(5px,-5px)}
+.ticket-cta:focus-within{outline:2px solid #c4d1c8;outline-offset:7px}
+@media(max-width:1050px){.washing-case-arrow{width:46px;height:46px}.washing-case-arrow svg{width:31px;height:31px}.washing-case{padding-right:64px}}
+@media(max-width:600px){
+ .washing-mechanism-media img{object-position:65% center}
+ .washing-mechanism-media::after{background:linear-gradient(0deg,#051014e6,#05101480 28%,#05101410 65%)}
+ .washing-hidden-words{justify-content:flex-end;padding:0 7vw 10vh;font-size:22vw;line-height:.95}
+ .washing-case-arrow{top:19px;width:44px;height:44px}.washing-case-arrow svg{width:28px;height:28px}.washing-case{padding-right:58px}.washing-case-name{font-size:31px}
+ .has-event-story .photo-collection{padding:104px 5vw 20px}.collection-heading h2{font-size:42px}.collection-heading>div{margin-top:12px}.collection-hint{margin-top:10px}
+ .has-event-story .collection-caption{height:38px;min-height:38px;padding:4px 1px 0}.has-event-story .collection-caption h3{font-size:16px;line-height:1.05}.has-event-story .collection-card{padding:6px}.has-event-story .photo-action{padding:5px 7px;font-size:8px}
+ .ticket-cta{width:min(320px,100%);height:135px;margin-top:65px}.ticket-paper{width:170px;height:108px;padding:12px 37px 12px 14px;border-radius:7px}.ticket-paper::after{right:29px}.ticket-paper-brand{font-size:29px}.ticket-paper-name{font-size:16px}.ticket-paper-type{font-size:7px}.ticket-paper-stub{right:8px;font-size:14px}.ticket-intro .ticket-cta-button{min-height:76px;padding:20px 23px;font-size:18px}.ticket-cta-arrow{font-size:31px}
+}
+@media(max-width:360px){.collection-heading h2{font-size:36px}.washing-case-name{font-size:27px}.has-event-story .collection-caption h3{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.washing-case-arrow,.ticket-cta-button,.ticket-cta-button>span{transition:none}.ticket-cta-button:hover,.ticket-cta-button:focus-visible{transform:none}}
+.is-reduced .washing-case[data-active] .washing-case-arrow,.is-reduced .washing-cases-list>li:hover .washing-case-arrow{transform:rotate(180deg)!important}

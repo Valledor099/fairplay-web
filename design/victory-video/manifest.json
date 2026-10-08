@@ -1,0 +1,30 @@
+{
+  "sources": [
+    "team-plate-continuous.png"
+  ],
+  "sourceSizes": [
+    [
+      1672,
+      941
+    ]
+  ],
+  "method": "One continuous photo, one scroll camera; the same engraved W becomes the vector wordmark. No shot switching or light trail.",
+  "asset": {
+    "file": "victory-team-plate.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 346556
+  },
+  "inscriptionPixels": {
+    "center": [
+      790,
+      131
+    ],
+    "size": [
+      80,
+      62
+    ]
+  }
+}

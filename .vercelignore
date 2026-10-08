@@ -1,0 +1,10 @@
+node_modules
+.deploy-tools
+.video-runtime
+blender
+design
+evidence
+scripts
+tests
+QA.md
+README.md

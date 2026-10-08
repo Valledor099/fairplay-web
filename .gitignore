@@ -1,0 +1,16 @@
+node_modules/
+dist/
+evidence/
+blender/*.blend
+blender/*.blend1
+blender/previews/
+blender/__pycache__/
+blender/retired-models/
+.video-runtime/
+scripts/__pycache__/
+.vercel/
+.deploy-tools/
+.env
+.env.*
+!.env.example
+*.log

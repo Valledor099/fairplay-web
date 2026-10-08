@@ -1,0 +1,61 @@
+/* An editorial introduction before the passport experience. */
+.sport-context.section-pad{padding:140px 7vw 100px}
+.context-intro{display:grid;grid-template-columns:1.45fr 1fr;gap:8vw;align-items:end}
+.context-intro h2{font-size:clamp(44px,5.1vw,78px);max-width:740px;line-height:1.1}
+.context-intro>p{max-width:450px;font-size:15px;line-height:1.85;color:#b7c6be;padding-bottom:7px}
+.context-story{display:grid;grid-template-columns:1.2fr 1fr;gap:6vw;align-items:center;margin-top:115px}
+.context-media{margin:0;min-width:0}
+.context-image{aspect-ratio:3/2;overflow:hidden;background:#0b1b20}
+.context-image img{display:block;width:100%;height:100%;object-fit:cover}
+.context-media figcaption{font-size:11px;line-height:1.65;color:#9eb4a8;margin-top:15px;max-width:90%}
+.context-copy{max-width:470px}
+.context-copy .context-topic{font-size:12px;color:#afc7ba;letter-spacing:.04em;margin-bottom:20px}
+.context-copy h3{font-size:clamp(32px,3.25vw,50px);letter-spacing:-.035em;line-height:1.15;margin-bottom:25px}
+.context-copy>p:not(.context-topic){font-size:14px;line-height:1.85;color:#b7c6be;margin-top:17px}
+.context-source{display:inline-block;font-size:11px;line-height:1.7;color:#c1d3c9;text-decoration:underline;text-underline-offset:5px;margin-top:25px}
+.context-source span{display:inline-block;margin-left:7px}
+.context-source:hover{color:var(--papel)}
+.context-source-secondary{display:block;margin-top:12px}
+.context-story-reverse{grid-template-columns:1fr 1.2fr}
+.context-story-reverse .context-media{order:2}
+.context-story-reverse .context-copy{order:1}
+.context-outro{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-top:110px;padding-top:36px;border-top:1px solid #708d8140}
+.context-image-note{font-size:10px;color:#9eb4a8}
+.context-outro>div{max-width:570px}
+.context-outro h3{font-size:clamp(30px,3vw,44px);letter-spacing:-.035em;margin-bottom:14px}
+@media(max-width:1000px){
+ .context-intro{gap:5vw;grid-template-columns:1.25fr 1fr}
+ .context-intro>p{font-size:14px}
+ .context-story{gap:4vw;margin-top:90px;align-items:start}
+ .context-copy h3{font-size:34px}
+ .context-copy>p:not(.context-topic){font-size:13px}
+}
+@media(max-width:700px){
+ .sport-context.section-pad{padding:100px 7vw 75px}
+ .context-intro{display:block}
+ .context-intro h2{font-size:45px;max-width:550px}
+ .context-intro>p{font-size:14px;padding:0;margin-top:28px;max-width:550px}
+ .context-story,.context-story-reverse{grid-template-columns:1fr;gap:28px;margin-top:70px}
+ .context-story-reverse .context-media,.context-story-reverse .context-copy{order:initial}
+ .context-copy{max-width:550px}
+ .context-copy h3{font-size:35px;margin-bottom:22px;max-width:470px}
+ .context-copy .context-topic{margin-bottom:14px}
+ .context-copy>p:not(.context-topic){font-size:14px}
+ .context-media figcaption{font-size:10px;margin-top:11px}
+ .context-source{font-size:10px;margin-top:22px}
+ .context-outro{display:block;margin-top:70px;padding-top:28px}
+ .context-outro>div{margin-top:32px}
+ .context-outro h3{font-size:32px}
+}
+@media(max-width:430px){
+ header.site-header{padding-left:4vw;padding-right:4vw}
+ header.site-header .home-link,header.site-header .home-link img{width:48px;flex-shrink:0}
+ header.site-header nav>a{padding-left:7px;padding-right:7px;white-space:nowrap}
+ header.site-header nav .tickets-link{margin-left:6px;padding-left:8px;padding-right:8px;gap:7px}
+}
+@media(max-width:360px){
+ header.site-header nav{font-size:9px}
+ header.site-header nav>a{padding-left:5px;padding-right:5px}
+ header.site-header nav .tickets-link{margin-left:5px;padding-left:8px;padding-right:8px}
+ header.site-header .tickets-link span{display:none}
+}
