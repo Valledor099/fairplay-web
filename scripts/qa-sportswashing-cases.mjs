@@ -9,16 +9,14 @@ const errors=[],results=[];
 const dir=new URL('../evidence/',import.meta.url);await fs.mkdir(dir,{recursive:true});
 const screenshot=async(page,name)=>page.screenshot({path:new URL(name+'.jpg',dir).pathname.replace(/^\/(\w:)/,'$1'),type:'jpeg',quality:85});
 const page=await browser.newPage({viewport:{width:1440,height:900}});page.on('pageerror',e=>errors.push(e.message));
-await page.goto('http://127.0.0.1:4181/',{waitUntil:'networkidle'});
+await page.goto('http://127.0.0.1:4181/',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);
 await page.evaluate(()=>{const section=document.querySelector('#contexto');window.scrollTo(0,section.offsetTop+.68*(section.offsetHeight-innerHeight))});await page.waitForTimeout(1600);
 for(const id of ['saudi-f1','six-kings','argentina-1978']){
  await page.locator(`a[data-case="${id}"]`).hover();
- await page.waitForFunction(()=>['playing','unavailable'].includes(document.querySelector('.washing-case-preview').dataset.playback),{},{timeout:22000}).catch(()=>{});
+ await page.waitForFunction(()=>document.querySelector('.washing-case-preview').dataset.playback==='poster',{},{timeout:22000}).catch(()=>{});
  await page.waitForTimeout(3300);
  const info=await page.evaluate(()=>{const el=document.querySelector('.washing-case-preview'),r=el.getBoundingClientRect();return {case:el.dataset.case,playback:el.dataset.playback,opacity:getComputedStyle(el).opacity,rect:r.toJSON(),iframe:el.querySelector('iframe')?.src}});
- const videoFrame=page.frames().find(f=>f.url().includes('/embed/'));
- const firstTime=await videoFrame.evaluate(()=>document.querySelector('video')?.currentTime??0);await page.waitForTimeout(1200);
- info.media=await videoFrame.evaluate(()=>{const v=document.querySelector('video');return {time:v?.currentTime,paused:v?.paused,muted:v?.muted}});info.advances=info.media.time>firstTime;results.push(info);
+ info.image=await page.locator('.washing-case-poster').evaluate(img=>({src:img.getAttribute('src'),loaded:img.complete&&img.naturalWidth>0}));results.push(info);
  await screenshot(page,'sportswashing-case-'+id);
 }
 await page.mouse.move(100,100);await page.waitForTimeout(400);
@@ -32,7 +30,7 @@ await page.close();
 for(const [name,width,height,reduced] of [['mobile',390,844,false],['small-mobile',319,650,false],['reduced',390,844,true]]){
  const context=await browser.newContext({viewport:{width,height},isMobile:true,hasTouch:true,reducedMotion:reduced?'reduce':'no-preference'});
  const page=await context.newPage();page.on('pageerror',e=>errors.push(name+': '+e.message));
- await page.goto('http://127.0.0.1:4181/',{waitUntil:'networkidle'});
+ await page.goto('http://127.0.0.1:4181/',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);
  if(!reduced){await page.evaluate(()=>{const section=document.querySelector('#contexto');window.scrollTo(0,section.offsetTop+.68*(section.offsetHeight-innerHeight))});await page.waitForTimeout(1500)}
  await screenshot(page,'sportswashing-definition-'+name);await page.locator('[data-case-preview="six-kings"]').scrollIntoViewIfNeeded();await screenshot(page,'sportswashing-cases-'+name);
  await page.locator('[data-case-preview="six-kings"]').tap();await page.waitForTimeout(1800);await screenshot(page,'sportswashing-case-'+name+'-preview');
@@ -42,4 +40,4 @@ for(const [name,width,height,reduced] of [['mobile',390,844,false],['small-mobil
 }
 const nojs=await browser.newContext({viewport:{width:390,height:844},javaScriptEnabled:false});const staticPage=await nojs.newPage();await staticPage.goto('http://127.0.0.1:4181/');await staticPage.locator('.washing-cases').scrollIntoViewIfNeeded();await screenshot(staticPage,'sportswashing-cases-no-js');results.push({noJSLinks:await staticPage.locator('a[data-case]').count(),noJSPreview:await staticPage.locator('.washing-case-preview').isVisible()});await nojs.close();
 await browser.close();await fs.writeFile(new URL('sportswashing-cases-qa.json',dir),JSON.stringify({errors,results},null,2));console.log(JSON.stringify({errors,results},null,2));
-if(errors.length||results.some(r=>r.overflow||r.playback&&r.playback!=='playing'||r.advances===false||r.noJSPreview))process.exitCode=1;
+if(errors.length||results.some(r=>r.overflow||r.playback&&r.playback!=='poster'||r.image?.loaded===false||r.iframe||r.noJSPreview))process.exitCode=1;

@@ -21,7 +21,7 @@ Importar este repositorio, seleccionar **Vite** y dejar **Root Directory** en la
 
 Portada interactiva con acceso animado a entradas y contador → explicación de sportswashing → pasaporte 3D → abanico de recompensas → nosotros → entradas.
 
-La explicación muestra cómo el prestigio deportivo puede ocultar otras historias. Sus ejemplos —F1 en Arabia Saudita, Six Kings Slam y Argentina 1978— abren una vista previa de video al pasar el cursor o recibir foco, y enlazan a sus fuentes. Los videos se incrustan desde YouTube y dependen de su disponibilidad. `src/sportswashing-cases-data.js` conserva sus destinos y créditos.
+La explicación muestra cómo el prestigio deportivo puede ocultar otras historias. Sus ejemplos —F1 en Arabia Saudita, Six Kings Slam y Argentina 1978— muestran una fotografía local al pasar el cursor o recibir foco, y enlazan a sus fuentes. En móvil, «Ver imagen» permite abrir y cerrar la vista previa. `src/sportswashing-cases-data.js` conserva sus destinos y créditos.
 
 El pasaporte se abre, recibe tres sellos y se cierra con el scroll. Las seis recompensas forman una mano de cartas fotográficas: la selección avanza de una en una y mantiene la carta activa en el centro. Hover, toque o teclado muestran la fotografía de uso del producto.
 
