@@ -1,4 +1,5 @@
 .hero #hero-title{position:absolute;top:29%;left:7vw;font-size:clamp(100px,17vw,270px)}
+.hero-tagline{display:block;margin-top:22px;font-family:var(--font-body,Manrope,sans-serif);font-size:clamp(16px,1.6vw,24px);font-weight:500;line-height:1.5;letter-spacing:0;text-transform:none;color:#fcfcfc}
 .hero-entry{position:absolute;right:7vw;bottom:105px;z-index:4;width:340px;color:#fff}
 .hero-ticket-cta{width:100%;height:80px;margin:0 0 28px}
 .hero-ticket-cta .ticket-paper{width:190px;height:112px;bottom:0}
@@ -23,6 +24,7 @@
 @media(max-width:700px){
  .hero{min-height:780px}
  .hero #hero-title{top:29%;font-size:24vw;left:7vw}
+ .hero-tagline{margin-top:16px;font-size:clamp(16px,4.4vw,18px);max-width:85vw}
  .hero-entry{left:7vw;right:7vw;bottom:170px;width:auto;max-width:340px}
  .hero-ticket-cta{height:66px;margin-bottom:20px}
  .hero-ticket-cta .ticket-cta-button{min-height:66px;padding:17px 23px}
