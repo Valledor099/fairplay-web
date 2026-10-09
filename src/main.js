@@ -15,6 +15,7 @@ import {createSiteChoreography} from './site-choreography.js';
 import './comment-refinements.css';
 import './collection-fullbleed.css';
 import './hero-entry.css';
+import './collection-horizontal.css';
 import {createHeroEntry} from './hero-entry.js';
 import {createTicketCta} from './ticket-cta.js';
 import {initSiteMenu} from './site-menu.js';

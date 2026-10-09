@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function createSiteChoreography({reduced=false}={}){
  const originals=[],listeners=[];
  const title=document.querySelector('#event-title');
- let collectionIntro,collectionVisible=false,lastTitle='';
+ let lastTitle='';
  function words(element){
   const original={element,html:element.innerHTML,label:element.getAttribute('aria-label')};originals.push(original);
   const readable=element.cloneNode(true);readable.querySelectorAll('br').forEach(br=>br.replaceWith(document.createTextNode(' ')));
@@ -32,11 +32,7 @@ export function createSiteChoreography({reduced=false}={}){
   document.querySelectorAll('[data-motion-heading]').forEach(heading=>{
    const targets=words(heading);
    const options={yPercent:0,rotation:0,duration:1,stagger:.055,ease:'power4.out'};
-   if(heading.id==='collection-title'){
-    collectionIntro=gsap.fromTo(targets,{yPercent:115,rotation:4},{...options,paused:true});
-   }else{
-    gsap.fromTo(targets,{yPercent:115,rotation:4},{...options,scrollTrigger:{trigger:heading,start:'top 88%',toggleActions:'play none none reverse'}});
-   }
+   gsap.fromTo(targets,{yPercent:115,rotation:4},{...options,scrollTrigger:{trigger:heading,start:'top 88%',toggleActions:'play none none reverse'}});
   });
   document.querySelectorAll('[data-motion-photo]').forEach(figure=>{
    const image=figure.querySelector('img'),shutter=figure.querySelector('.photo-reveal-shutter');
@@ -60,8 +56,6 @@ export function createSiteChoreography({reduced=false}={}){
  });
  function render(progress,time,washingProgress,handoff){
   if(reduced)return;
-  const showCollection=progress>=.99&&!handoff.active;
-  if(collectionVisible!==showCollection){collectionVisible=showCollection;showCollection?collectionIntro?.play():collectionIntro?.reverse()}
   if(title&&title.textContent!==lastTitle){
    lastTitle=title.textContent;
    context.add(()=>gsap.fromTo(title,{y:12,opacity:.3},{y:0,opacity:1,duration:.65,ease:'power3.out',overwrite:'auto'}));

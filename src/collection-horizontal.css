@@ -1,0 +1,45 @@
+/* A native horizontal gallery, independent of the passport's vertical timeline. */
+.photo-collection,.has-event-story .photo-collection{
+ position:relative;inset:auto;height:auto;display:block;opacity:1;visibility:visible;
+ padding:85px 0 55px;transform:none;will-change:auto;
+ --collection-card-width:min(560px,78vw);
+}
+.has-event-story .photo-collection{margin-top:-100svh;z-index:2;padding-top:110px;will-change:opacity}
+.collection-heading{align-items:flex-start}
+.collection-heading h2{max-width:720px;font-size:clamp(40px,4.3vw,70px)}
+.collection-hint{margin-top:18px;margin-bottom:8px}
+.collection-window,.has-event-story .collection-window{
+ display:block;width:100%;height:auto;flex:none;min-height:0;
+ overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
+ scroll-snap-stop:always;overscroll-behavior:auto;overscroll-behavior-x:contain;touch-action:pan-x pan-y;
+ scrollbar-width:thin;scrollbar-color:#708d81 #708d8126;
+}
+.collection-window::-webkit-scrollbar{display:block;height:5px}
+.collection-window::-webkit-scrollbar-thumb{background:#708d81;border-radius:8px}
+.collection-grid,.has-event-story .collection-grid{
+ position:relative;display:flex;width:max-content;height:auto;align-items:stretch;
+ gap:clamp(24px,4vw,60px);padding:24px var(--collection-edge,calc((100vw - var(--collection-card-width))/2)) 30px;
+ transform:none;will-change:auto;
+}
+.collection-card,.has-event-story .collection-card{
+ position:relative;inset:auto;flex:none;width:var(--collection-card-width);min-width:0;
+ transform:none;filter:none;opacity:1;visibility:visible;scroll-snap-align:center;
+ scroll-snap-stop:always;will-change:auto;box-shadow:0 16px 35px #0004;
+}
+.collection-photo,.has-event-story .collection-photo{aspect-ratio:3/4;border-radius:8px}
+.collection-caption,.has-event-story .collection-caption{top:24px;left:24px;right:24px}
+.collection-caption h3,.has-event-story .collection-caption h3{font-size:clamp(28px,3vw,42px);line-height:1}
+.photo-action,.has-event-story .photo-action{right:24px;bottom:24px;font-size:12px}
+.collection-controls{padding-top:22px}
+.collection-controls button{width:54px;height:46px;font-size:26px}
+@media(max-width:700px){
+ .photo-collection,.has-event-story .photo-collection{padding-top:65px;padding-bottom:40px;--collection-card-width:86vw}
+ .has-event-story .photo-collection{padding-top:100px}
+ .collection-heading h2{font-size:42px}
+ .collection-heading>div{margin-top:16px}
+ .collection-hint{font-size:10px;line-height:1.6;margin-top:18px}
+ .collection-grid,.has-event-story .collection-grid{gap:20px;padding-top:20px;padding-bottom:24px}
+ .collection-caption,.has-event-story .collection-caption{top:18px;left:18px;right:18px}
+ .collection-caption h3,.has-event-story .collection-caption h3{font-size:30px}
+ .photo-action,.has-event-story .photo-action{right:18px;bottom:18px;font-size:10px}
+}

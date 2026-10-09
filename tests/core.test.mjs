@@ -5,24 +5,16 @@ import {referenceQuads,homography,inversePoint,passportState,stampRanges,stampIm
 import {initialBooking,selectionError,contactErrors,qrPayload} from '../src/booking-model.js';
 import {EVENT,eventCountdown} from '../src/event-config.js';
 import {createIdleReveal,IDLE_DELAY,DEMO_DURATION,DEMO_REST} from '../src/hero-idle.js';
-import {eventStory,productFocus,storyDistance,productDistance,PASSPORT_DISTANCE,REWARDS_START} from '../src/event-story.js';
+import {eventStory,storyDistance,PASSPORT_DISTANCE,REWARDS_START} from '../src/event-story.js';
 
-test('rewards follow the passport closure, center all six products and reverse with the same scroll positions',()=>{
- const total=storyDistance(6),closed=eventStory(REWARDS_START/total);
- assert.ok(closed.passport>=.93-1e-10);assert.equal(closed.rewards,0);
- assert.equal(eventStory(PASSPORT_DISTANCE/total).passportOpacity,0);
- for(const i of [0,1,2,3,4,5,4,3,2,1,0]){
-  const state=eventStory(productDistance(i)/total);
-  assert.equal(state.passport,1);assert.equal(state.rewards,1);assert.ok(Math.abs(state.product-i)<1e-10);
- }
- assert.equal(eventStory(1).product,5);assert.equal(eventStory(0).passport,0);
-});
-test('product focus is sharp at the center and symmetric with increasing distance',()=>{
- assert.deepEqual(productFocus(0),{blur:0,scale:1,opacity:1,y:0});
- for(const distance of [.25,.5,1,2])assert.deepEqual(productFocus(distance),productFocus(-distance));
- assert.ok(productFocus(1).blur>productFocus(.5).blur);
- assert.ok(productFocus(2).opacity<productFocus(1).opacity);
- assert.ok(productFocus(2).scale<productFocus(1).scale);
+test('the passport closes before the independent gallery without adding vertical distance for products',()=>{
+ assert.equal(storyDistance(1),PASSPORT_DISTANCE);assert.equal(storyDistance(6),PASSPORT_DISTANCE);
+ const closing=eventStory(REWARDS_START/PASSPORT_DISTANCE);
+ assert.ok(closing.passport>=.93-1e-10);assert.equal(closing.passportOpacity,1);
+ assert.deepEqual(eventStory(0),{passport:0,passportOpacity:1});
+ assert.deepEqual(eventStory(1),{passport:1,passportOpacity:0});
+ const positions=[0,.3,.5,.8,.93,.97,1];
+ assert.deepEqual(positions.map(eventStory),positions.toReversed().map(eventStory).toReversed());
 });
 
 test('the hero demonstrates its reveal after inactivity, rests, and repeats',()=>{

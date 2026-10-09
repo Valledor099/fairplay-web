@@ -23,7 +23,7 @@ Portada interactiva con acceso animado a entradas y contador → explicación de
 
 La explicación muestra cómo el prestigio deportivo puede ocultar otras historias. Sus ejemplos —F1 en Arabia Saudita, Six Kings Slam y Argentina 1978— muestran una fotografía local al pasar el cursor o recibir foco, y enlazan a sus fuentes. En móvil, «Ver imagen» permite abrir y cerrar la vista previa. `src/sportswashing-cases-data.js` conserva sus destinos y créditos.
 
-El pasaporte se abre, recibe tres sellos y se cierra con el scroll. Las seis recompensas forman una mano de cartas fotográficas: la selección avanza de una en una y mantiene la carta activa en el centro. Hover, toque o teclado muestran la fotografía de uso del producto.
+El pasaporte se abre, recibe tres sellos y se cierra con el scroll. A continuación, las seis recompensas aparecen como tarjetas fotográficas grandes en una galería horizontal independiente. Deslizar, usar la rueda o las flechas permite pasar de una en una, con la selección centrada. Hover, toque o teclado muestran la fotografía de uso del producto.
 
 Las animaciones respetan movimiento reducido. Sin JavaScript hay contenido legible; sin WebGL se conserva la imagen alternativa del pasaporte.
 
