@@ -1,0 +1,38 @@
+FAIR PLAY
+UI kit / Web / Figma
+02 / 12
+Colores y contraste
+Paleta original de Fair Play y roles semánticos tomados de la web
+Noche
+#051014
+Fondo principal
+Carbón
+#2E2F2F
+Neutro de marca
+Pizarra
+#828A95
+Neutro de marca
+Salvia
+#708D81
+Acción primaria
+Papel
+#FCFCFC
+Texto principal
+Superficie
+#0C2228
+Bloques y diálogo
+Texto de apoyo
+#C4D1C8
+Ayuda y metadatos
+Error
+#F2B7A8
+Mensaje y borde
+18.77:1
+Papel sobre noche
+5.33:1
+Noche sobre salvia
+9.50:1
+Error sobre superficie
+Cada estado se identifica también con texto o bordes. Las proporciones verifican estos pares específicos; no certifican toda la accesibilidad del sitio.
+Cap. 3 · Formularios y mensajes de error. La paleta es una decisión de Fair Play
+15 de octubre de 2026

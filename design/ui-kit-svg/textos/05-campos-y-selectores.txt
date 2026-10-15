@@ -1,0 +1,43 @@
+FAIR PLAY
+UI kit / Web / Figma
+05 / 12
+Campos y selectores
+Etiquetas visibles, ayuda junto al campo y errores específicos
+Reposo
+Correo electrónico
+
+Usá el formato nombre@dominio.com
+Foco
+Correo electrónico
+ana@example.com
+Usá el formato nombre@dominio.com
+Completo
+Correo electrónico
+ana@example.com
+Ejemplo de dato completo
+Error
+Correo electrónico
+sin-formato
+Revisá el correo. Usá el formato nombre@dominio.com.
+No disponible
+Correo electrónico
+Generando QR…
+Control no disponible durante la acción
+Área de texto
+Apoyo para la visita (opcional)
+
+Por ejemplo, acceso sin escalones. El pedido de demostración no se envía.
+Cantidad de entradas
+De 1 a 6 personas en total, incluyéndote
+−
+1
++
+−
+3
++
+−
+6
++
+No reemplazar etiquetas con ejemplos. No usar el color como única señal del error. El foco vuelve al primer campo que necesita corrección.
+Cap. 3 · Formularios y mensajes de error
+15 de octubre de 2026

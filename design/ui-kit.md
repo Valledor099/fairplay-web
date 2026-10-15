@@ -1,24 +1,22 @@
-# UI kit de Fair Play
+# UI kit de Fair Play en SVG
 
-Página de referencia: `/ui-kit.html`. El enlace «UI kit» del pie de la web permite abrirla. Se compila junto con `index.html` y se puede publicar con la configuración Vite/Vercel existente.
+Entrega para Figma en `design/ui-kit-svg/`. La página `ui-kit.html` y el enlace del pie de la web fueron retirados. Las correcciones de contenido de la web se conservan.
 
-El kit describe la web actual: conserva su marca, fotografías, paleta, Barlow Condensed, Manrope y recorrido. La tipografía del manual histórico (Playfair Display y Arial) no reemplaza la de la web ya implementada. Los colores originales del manual son Noche, Carbón, Pizarra, Salvia y Papel; los tonos semánticos adicionales proceden de los estilos actuales de la reserva.
+## Archivos
 
-## Fuente y alcance
+- 12 SVG principales: textos convertidos a curvas, formas agrupadas y recursos incrustados. No dependen de fuentes instaladas para conservar la apariencia.
+- `con_texto/`: las mismas 12 láminas con elementos SVG de texto. Figma puede convertirlos a vectores al importar; no se garantiza texto nativo editable.
+- `fuentes/`: Barlow Condensed y Manrope en TTF, con licencias SIL OFL.
+- `textos/`: los textos de cada lámina para copiar y editar en Figma.
+- `tokens.json`: paleta, tipografías, espacios y altura de controles.
 
-Se consultó el extracto local `T. SOP. Informatico/Resources/Capitulos_3_y_8_Diseno_de_contenidos.md`, del Vault, correspondiente a los capítulos 3 y 8 de *Diseño de contenidos: notas de oficio sobre UX Content, UX Writing y liderazgo*, de Marisol Parnofiello. Las referencias son por capítulo y apartado: no se inventan páginas ni se reproduce el libro en el repositorio.
+Arrastrar los 12 SVG principales al lienzo de Figma. Los grupos vectoriales no crean componentes, variantes ni auto-layout nativos: pueden construirse en Figma a partir de esta base. Las fotografías y el símbolo original siguen siendo imágenes incrustadas; los textos de la versión principal son trazados y los controles son formas vectoriales.
 
-El capítulo 3 fundamenta las pautas junto a cada componente, la distinción entre enlaces y botones, las etiquetas predictivas, los errores, el progreso y los diálogos. El capítulo 8 fundamenta las reglas de fechas, tiempo, extranjerismos y puntuación. Las elecciones de fotografía, fuentes, paleta y animación son de Fair Play; no se atribuyen al libro.
+## Contenido
 
-## Estructura
+Portada, colores/contraste, tipografía/espacio, acciones/estados, campos/selectores, navegación/progreso, mensajes/diálogos, datos/cantidad, revisión/QR, composiciones/responsive, voz/escritura y revisión de Marisol.
 
-- Átomos: cinco colores de marca, tres colores de función, familias tipográficas, escala de espacio, foco, bordes y contrastes calculados.
-- Moléculas: enlaces primarios/secundarios, botones, estados no disponibles, campos completos, con error y deshabilitados, selector de cantidad.
-- Organismos: formulario de demostración, progreso de tres etapas, navegación, avisos y diálogo de borrado.
-- Composiciones: producto y visita, con recursos y configuración del evento existentes.
-- Contenido: voz y tono, vocabulario, ejemplos de escritura y tabla de desvíos/correcciones.
-
-Los botones de demostración tienen efecto; los enlaces de navegación llevan al contenido real. La validación de contacto se importa de `booking-model.js`. El indicador y el diálogo se generan desde `booking-components.js`, compartido con la reserva. La muestra del formulario no guarda ni envía datos y no altera la solicitud de la web.
+Fuente: extracto local del Vault `T. SOP. Informatico/Resources/Capitulos_3_y_8_Diseno_de_contenidos.md`, de Diseño de contenidos de Marisol Parnofiello, capítulos 3 y 8. Las referencias son por apartado, sin páginas inventadas. Las reglas de escritura se vinculan a cada componente. La paleta, las fotografías y las tipografías son decisiones del proyecto, no prescripciones del libro.
 
 ## Desvíos corregidos
 
@@ -30,22 +28,14 @@ Los botones de demostración tienen efecto; los enlaces de navegación llevan al
 | El foco podía salir del diálogo al pasar sus extremos con Tab | Tab y Shift+Tab recorren circularmente sus dos botones. Escape cierra y devuelve el foco al origen | Cap. 3, Diálogos, accesibilidad |
 | «Sumate a la experiencia» no anticipaba el destino | «Ver entradas» para ir a la sección; «Obtener entradas» sigue abriendo el formulario | Cap. 3, Botones y navegación |
 | Punto final en el título «El brillo puede taparlo todo.» | Título sin punto final | Cap. 8, Puntuación |
-| Pautas dispersas | Biblioteca navegable con reglas junto al componente y estados funcionales | Cap. 3, Librería de componentes |
+| Pautas dispersas | Biblioteca SVG con reglas junto al componente y sus estados | Cap. 3, Librería de componentes |
 
 Se mantienen las mayúsculas expresivas de marca y títulos editoriales; el criterio explícito de no usar mayúsculas sostenidas en botones se respeta en los controles. El menú superior mantiene «Menú» visible y destinos descriptivos. La prohibición del menú hamburguesa del apartado de navegación lateral no se extrapola a toda navegación.
 
-## Mantenimiento
+## Regeneración y validación
 
-`src/site-styles.js` reúne el orden de importación de la cascada para ambas páginas. Compartir sólo una parte de los estilos entre las entradas de Vite altera el orden de los archivos extraídos en producción: la secuencia única evita esa regresión.
+Ejecutar `node scripts/prepare-ui-kit-svg.mjs` para preparar la foto PNG y el QR de demostración; luego ejecutar `python scripts/export-ui-kit-svg.py` con FontTools y Brotli disponibles. En el entorno original se usa el Python 3.12 del runtime y dependencias en `tmp/svg-runtime` del Vault. Sharp se obtiene del runtime Node o de `FAIRPLAY_SVG_MODULES`.
 
-`src/ui-foundations.css` asigna roles semánticos a la paleta existente y define espacios, foco, estados y altura de controles. No reemplaza las composiciones específicas del sitio. La descarga JSON lee los valores CSS calculados, sin mantener una segunda tabla manual de tokens. Los pares de contraste que se muestran son texto principal/fondo, texto oscuro/acción y error/superficie; no equivalen a una evaluación de todas las combinaciones posibles.
+El generador valida XML, límites de elementos y glifos, guarda ambas variantes y crea `../FairPlay_UI_Kit_SVG.zip`. El QR se genera desde el modelo de reserva con validForAdmission:false; no es una entrada real.
 
-Para cambiar el contenido de pasos o el diálogo, editar `booking-components.js`. Para modificar condiciones reales del evento, editar la configuración y las condiciones de la web; el kit no define precios ni cupos. Para editar la voz, modificar los ejemplos y revisar su uso en la interfaz real.
-
-## Validación reproducible
-
-`npm test` comprueba la lógica existente; `npm run build` compila las dos páginas. `node scripts/qa-ui-kit.mjs` verifica tokens descargables, navegación, validación/foco, cantidades, progreso, diálogo y desborde en escritorio, móvil, móvil pequeño y movimiento reducido. Por defecto usa la compilación en `http://127.0.0.1:4186/`. `FAIRPLAY_QA_URL`, `FAIRPLAY_QA_BROWSER` y `FAIRPLAY_QA_MODULES` permiten adaptar URL, ejecutable y ubicación del módulo Playwright.
-
-`scripts/qa-heuristics.mjs` comprueba el recorrido original. Las capturas y resultados técnicos se guardan en `evidence/`, excluido de Git. Sólo se consideran válidos los resultados de la ejecución final registrada en `QA.md`.
-
-Las comprobaciones técnicas y la revisión visual no son pruebas con participantes. El voseo es la convención del proyecto; la comprensión y el vocabulario siguen pendientes de contrastar mediante investigación cualitativa. El QR permanece como demostración local sin validez de ingreso.
+Las láminas se renderizaron para revisar su composición. Los resultados de la web se registran en QA.md; las capturas están excluidas de Git. No se realizó importación dentro de Figma ni pruebas con participantes.

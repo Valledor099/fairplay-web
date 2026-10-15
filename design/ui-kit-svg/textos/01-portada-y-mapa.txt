@@ -1,0 +1,23 @@
+FAIR PLAY
+UI kit / Web / Figma
+01 / 12
+El mismo juego / Un lenguaje común
+Biblioteca de interfaz de Fair Play, organizada para importar en Figma
+Mirá detrás
+del juego
+Colores, tipografías, componentes, estados y contenido. El
+sistema conserva la identidad de la web y vincula las reglas de
+escritura con cada componente.
+Fundamentos
+Paleta, contraste, tipografía y espacio
+Componentes
+Acciones, campos, navegación y mensajes
+Plantillas
+Datos, revisión, QR y composiciones
+Contenido
+Voz, escritura y correcciones del libro
+Cómo usar el paquete
+Los SVG principales tienen texto convertido a curvas. La carpeta con_texto conserva elementos de texto; fuentes contiene las familias reales y sus
+licencias.
+Fuente: web existente y extracto local de Diseño de contenidos, capítulos 3 y 8
+15 de octubre de 2026

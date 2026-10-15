@@ -1,0 +1,33 @@
+FAIR PLAY
+UI kit / Web / Figma
+10 / 12
+Composiciones y adaptación
+Producto, planificación de visita y comportamiento en móvil
+Camiseta Fair Play
+Completá las 3 estaciones y reuní tus
+sellos
+Planificá tu visita
+Cuándo
+Sábado 12 de diciembre de 2026
+Desde las 8:00 h, sin turnos
+Dónde
+Club Arquitectura
+Av. Francisco Beiró 2116, CABA
+Acceso
+Entrada gratuita
+De 1 a 6 personas por solicitud, incluyéndote
+Obtener entradas
+Móvil
+Una columna para
+completar y leer
+Correo electrónico
+ana@example.com
+Revisar datos
+Editar datos
+Acciones apiladas cuando el
+ancho lo requiere
+Reglas de adaptación
+El contenido mantiene su orden lógico. Los campos ocupan una columna; las acciones se adaptan al ancho. El foco y los mensajes siguen visibles. Las
+imágenes conservan su proporción.
+Cap. 3 · Contenido antes que componente y formularios. Las fotografías son originales del proyecto
+15 de octubre de 2026

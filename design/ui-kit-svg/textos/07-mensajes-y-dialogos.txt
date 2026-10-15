@@ -1,0 +1,27 @@
+FAIR PLAY
+UI kit / Web / Figma
+07 / 12
+Mensajes y diálogos
+El contenido cambia según la situación y permite decidir cómo continuar
+Información persistente
+Solicitud de demostración
+Esta es una demostración: no se reserva un
+lugar ni se envía un correo. El QR no tiene
+validez de ingreso.
+Error recuperable
+No pudimos generar tu QR
+Tus datos siguen disponibles. Podés volver a
+intentar o revisarlos antes de continuar.
+Resultado
+Tu QR de prueba está listo
+Podés descargarlo para probar el recorrido.
+No tiene validez de ingreso.
+¿Querés borrar la solicitud?
+Se borrarán la cantidad y los datos que ingresaste en esta demostración.
+Seguir con la solicitud
+Borrar solicitud
+Jerarquía y foco
+Borrar solicitud confirma la decisión y es primario. El foco inicial permanece en Seguir con la solicitud. Tab y Shift+Tab circulan entre ambas opciones;
+Escape cierra y devuelve el foco al origen.
+Cap. 3 · Diálogos, mensajes de error y notificaciones
+15 de octubre de 2026

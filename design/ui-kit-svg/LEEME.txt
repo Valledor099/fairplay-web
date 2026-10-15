@@ -1,0 +1,11 @@
+FAIR PLAY / UI KIT PARA FIGMA
+
+1. Descomprimí el ZIP.
+2. Arrastrá los 12 SVG principales al lienzo de Figma. Tienen texto en curvas para conservar la apariencia.
+3. Cada lámina tiene formas y grupos separados; las fotografías originales están incrustadas.
+4. con_texto contiene las mismas láminas con elementos SVG de texto. Instalá las fuentes incluidas si las vas a usar; Figma puede convertir los textos a vectores al importar.
+5. textos contiene todos los textos para copiar y editar dentro de Figma.
+
+Los SVG no crean componentes, variantes ni auto-layout nativos de Figma. Son una base vectorial organizada para armarlos allí.
+Las fuentes incluyen sus licencias SIL OFL. El QR es de prueba y no tiene validez de ingreso.
+La web conserva las correcciones del libro; la página del UI kit fue retirada.

@@ -1,0 +1,35 @@
+FAIR PLAY
+UI kit / Web / Figma
+06 / 12
+Navegación y progreso
+Nombres estables y un indicador para las etapas lógicas de la solicitud
+FAIR PLAY
+Inicio
+El evento
+Recompensas
+Entradas
+Paso 1 de 3
+1
+Datos y cantidad
+2
+Revisión
+3
+Entrada
+Paso 2 de 3
+1
+Datos y cantidad
+2
+Revisión
+3
+Entrada
+Paso 3 de 3
+1
+Datos y cantidad
+2
+Revisión
+3
+Entrada
+La sección actual se reconoce
+La web combina subrayado y estado accesible. En móvil mantiene la etiqueta Menú junto al ícono; los destinos siguen nombrados.
+Cap. 3 · Stepper y barras de navegación
+15 de octubre de 2026

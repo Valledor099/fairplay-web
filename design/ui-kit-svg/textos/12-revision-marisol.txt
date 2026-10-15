@@ -1,0 +1,36 @@
+FAIR PLAY
+UI kit / Web / Figma
+12 / 12
+Del libro a la interfaz
+Desvíos corregidos y límites de la fundamentación: referencias por apartado, sin inventar páginas
+Horario visible
+08:00 h pasa a 8:00 h. Se conserva el instante técnico del evento.
+Cap. 8 · Algunos consejos sobre tiempo
+Jerarquía del diálogo
+Borrar solicitud confirma y se destaca. Seguir con la solicitud mantiene el foco inicial.
+Cap. 3 · Diálogos
+Decisión explícita
+¿Querés borrar la solicitud? coincide con Borrar solicitud y explica qué datos se pierden.
+Cap. 3 · Diálogos y botones
+Foco contenido
+Tab y Shift+Tab circulan entre las 2 decisiones. Escape cierra y devuelve el foco al origen.
+Cap. 3 · Diálogos, accesibilidad
+Destino predecible
+Sumate a la experiencia pasa a Ver entradas para anticipar la sección de destino.
+Cap. 3 · Botones y navegación
+Puntuación de títulos
+El brillo puede taparlo todo deja de llevar punto final.
+Cap. 8 · Puntuación
+Pautas junto al componente
+La biblioteca se entrega como láminas SVG organizadas para Figma, con estados y criterios de escritura.
+Cap. 3 · Librería de componentes
+Qué fundamenta el libro
+Contenido claro, componentes adecuados, errores útiles, decisiones
+predecibles y estilo consistente. La voz y el vocabulario siguen
+pendientes de contrastar con personas.
+Qué define Fair Play
+Paleta, fotografías, fuentes, pasaporte 3D y animaciones. La regla de
+no usar menú hamburguesa en navegación lateral no se extrapola al
+menú superior.
+Fuente: extracto local de Diseño de contenidos, capítulos 3 y 8. Sin pruebas con participantes
+15 de octubre de 2026

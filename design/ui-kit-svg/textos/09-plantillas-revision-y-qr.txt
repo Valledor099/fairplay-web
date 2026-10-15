@@ -1,0 +1,40 @@
+FAIR PLAY
+UI kit / Web / Figma
+09 / 12
+Revisión y QR de prueba
+Confirmación editable y resultado honesto, sin prometer reservas reales
+Revisá tus datos
+Paso 2 de 3 / Revisión
+Día
+Sábado 12 de diciembre de 2026
+Acceso
+Desde las 8:00 h, sin turnos
+Sede
+Club Arquitectura, CABA
+Cantidad
+1 entrada / Cambiar cantidad
+Nombre
+Ana Prueba
+Correo
+ana@example.com / Corregir correo
+Apoyo
+Sin pedido de apoyo
+Total
+Gratis
+Editar datos
+Confirmar y generar QR
+Tu QR de prueba está listo
+Paso 3 de 3 / Entrada
+No tiene validez de ingreso. No se reservó un lugar ni se envió un
+correo.
+QR de prueba / Sin validez de ingreso
+En la versión real, presentarías el QR en la acreditación para recibir
+el pasaporte físico. Los sellos se obtienen en las 3 estaciones.
+Descargar QR
+Volver al inicio
+Si cerrás o recargás la página, los datos y el QR se pierden. Si la descarga no
+aparece, podés abrir el QR para guardarlo.
+Vuelta y recuperación
+Se conservan los datos al editar. La descarga puede repetirse. El mensaje indica que se solicitó la descarga; no afirma que el archivo ya está guardado.
+Cap. 3 · Diálogos, formularios y mensajes de error
+15 de octubre de 2026

@@ -1,3 +1,15 @@
+## Retiro del kit web y entrega SVG · 15 de octubre de 2026
+
+- Se retiraron `ui-kit.html`, sus estilos, su módulo y su prueba específica. Se quitó el enlace del pie y se devolvió Vite a una sola entrada. Se conservan las correcciones de contenido y del diálogo de reserva.
+- Entrega en `design/ui-kit-svg/`: 12 láminas con texto en curvas, 12 con elementos SVG de texto, textos copiables, fuentes TTF con licencias y tokens. ZIP de entrega en `../FairPlay_UI_Kit_SVG.zip`.
+- Los 24 SVG son XML válido. Las versiones principales no contienen elementos de texto: son trazados. Las alternativas conservan elementos de texto. El generador verifica límites de los elementos y ausencia de glifos faltantes.
+- Las fotografías se incrustan como PNG y el símbolo conserva el recurso original. Se renderizaron las 12 láminas con Sharp y se revisaron la vista de conjunto y las composiciones detalladas. Se corrigió la compatibilidad de una foto incrustada en WebP convirtiéndola a PNG.
+- Integridad ZIP verificada. No se realizó importación dentro de Figma; no se afirma que los SVG creen componentes, variantes, auto-layout o texto nativo de Figma.
+- `npm test`: 19 pruebas aprobadas. `npm run build`: correcto, sin `dist/ui-kit.html` ni enlace al kit en la web compilada. Persiste el aviso de tamaño de Three.js.
+- `scripts/qa-heuristics.mjs`: aprobado en escritorio, móvil, móvil pequeño y movimiento reducido. Reserva, edición, cancelación/foco, QR/descarga, historial, pasaporte y seis recompensas conservados. Sin errores de ejecución ni desborde horizontal en los escenarios comprobados.
+
+Las secciones siguientes documentan versiones anteriores.
+
 ## UI kit y revisión de contenidos · 15 de octubre de 2026
 
 Validación final de la biblioteca `/ui-kit.html` y de la web original sobre la compilación de producción:

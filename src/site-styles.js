@@ -1,4 +1,4 @@
-// Una única secuencia de estilos para mantener la cascada en ambas páginas.
+// Secuencia de estilos del recorrido web, conservada al retirar la página del kit.
 import './styles.css';
 import './typefaces.css';
 import './sportswashing-story.css';

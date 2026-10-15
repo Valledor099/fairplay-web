@@ -1,0 +1,33 @@
+FAIR PLAY
+UI kit / Web / Figma
+08 / 12
+Formulario de entradas
+Plantilla de una columna: contexto, cantidad, contacto y acción de revisión
+Paso 1 de 3
+1
+Datos y cantidad
+2
+Revisión
+3
+Entrada
+Obtené tus entradas
+La entrada es gratuita. Elegí la cantidad y completá tus datos.
+Sábado 12 de diciembre de 2026
+Desde las 8:00 h, sin turnos · Club Arquitectura, CABA
+Av. Francisco Beiró 2116, CABA
+Esta es una demostración: no se reserva un lugar ni se envía un correo. El QR no tiene validez
+de ingreso.
+Cantidad de entradas: 1
+De 1 a 6 personas en total, incluyéndote
+Nombre y apellido
+Ana Prueba
+Correo electrónico
+ana@example.com
+Usá el formato nombre@dominio.com
+Apoyo para la visita (opcional)
+Ejemplo: acceso sin escalones
+Volver al evento
+Revisar datos
+Los errores se ubican junto al campo correspondiente. Cantidad y datos se conservan al volver desde Revisión. La demostración no envía ni guarda datos.
+Cap. 3 · Formularios, mensajes de error y botones
+15 de octubre de 2026

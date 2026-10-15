@@ -1,0 +1,31 @@
+FAIR PLAY
+UI kit / Web / Figma
+03 / 12
+Tipografía y espacio
+Las familias activas de la web: Barlow Condensed para impacto y Manrope para lectura
+Barlow Condensed · 700 / 800
+MIRÁ DETRÁS DEL JUEGO
+Manrope · 400 / 500 / 600 / 700
+La claridad también es identidad
+El pasaporte es físico y lo recibís en el evento. Completá las 3 estaciones para reunir
+tus sellos y retirar la camiseta en el Vestuario.
+Subtítulo
+32 px
+Texto de lectura
+24 px
+Etiqueta de campo
+20 px
+Ayuda y metadatos
+17 px
+Escala de espacio
+4 px
+8 px
+12 px
+16 px
+24 px
+32 px
+48 px
+Criterio de contenido
+Mayúscula inicial en controles. Títulos y etiquetas sin punto final. Las mayúsculas expresivas de marca y títulos editoriales se conservan.
+Cap. 3 · Botones y librería de componentes. Cap. 8 · Puntuación
+15 de octubre de 2026

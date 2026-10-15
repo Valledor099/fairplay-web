@@ -1,0 +1,31 @@
+FAIR PLAY
+UI kit / Web / Figma
+04 / 12
+Acciones y estados
+Enlaces para navegar; botones para actuar. La etiqueta anticipa el resultado
+Reposo
+Revisar datos
+Editar datos
+Al pasar el cursor
+Revisar datos
+Editar datos
+Foco de teclado
+Revisar datos
+Editar datos
+No disponible
+Generando QR…
+Editar datos
+Enlace con apariencia primaria
+Obtener entradas
+Enlace secundario
+Ver recompensas
+Una acción por etiqueta
+Usá infinitivo y objeto cuando aclare la acción: Revisar datos,
+Descargar QR, Borrar solicitud. Evitá Sí, No u OK como única etiqueta.
+Una jerarquía por grupo
+Destacá la acción principal. La alternativa usa tratamiento secundario.
+Los controles se presentan con altura y foco visibles.
+Obtener entradas abre el formulario. Ver entradas lleva a la sección informativa. Descargar QR solicita el archivo: no afirma que el navegador ya lo
+guardó.
+Cap. 3 · Botones y barra de navegación superior
+15 de octubre de 2026

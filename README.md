@@ -1,14 +1,10 @@
 # FAIR PLAY
 
-## UI kit y contenidos · 15 de octubre de 2026
+## UI kit en SVG para Figma · 15 de octubre de 2026
 
-La biblioteca está en [ui-kit.html](ui-kit.html), accesible desde el pie de la web. Incluye paleta de marca, colores semánticos, tipografía, espacios, tokens descargables, estados de controles y campos, formulario interactivo, progreso, navegación, avisos, diálogo y composiciones de producto/visita.
+El UI kit se entrega en [design/ui-kit-svg](design/ui-kit-svg/): 12 láminas SVG con texto en curvas, 12 versiones con elementos de texto, fuentes y licencias, textos copiables y tokens. La página del kit y su enlace en el pie fueron retirados de la web a pedido del usuario.
 
-Las reglas de contenido están junto a cada componente y se fundamentan en los capítulos 3 y 8 de Marisol Parnofiello. [La documentación del kit](design/ui-kit.md) registra la fuente local, las decisiones y cada desvío corregido. La paleta, fotografía, tipografías y animación se conservan como decisiones de Fair Play.
-
-Se corrigieron la escritura del horario visible (`8:00 h`), la jerarquía y redacción del diálogo de borrado, su recorrido circular de foco con teclado, un acceso ambiguo a entradas y el punto final de un título. La reserva y el kit comparten los componentes de progreso y diálogo, la validación de contacto y una única secuencia de estilos. El instante del evento y el contador no cambian.
-
-`npm run build` genera ambas páginas. Para revisar el kit: `npm run preview` y abrir `/ui-kit.html`. `scripts/qa-ui-kit.mjs` documenta sus comprobaciones funcionales; `QA.md` registra el resultado de la validación final. El QR sigue siendo una demostración local sin validez de ingreso.
+Se conservan las correcciones basadas en los capítulos 3 y 8 de Marisol Parnofiello: horario visible, etiquetas, puntuación, jerarquía del diálogo y recorrido de foco con teclado. [La documentación del kit](design/ui-kit.md) describe los SVG, el alcance de importación y cómo regenerarlos.
 
 ## Cambios a partir del informe de usabilidad · 15 de octubre de 2026
 

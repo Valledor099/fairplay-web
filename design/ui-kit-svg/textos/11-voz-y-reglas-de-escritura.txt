@@ -1,0 +1,35 @@
+FAIR PLAY
+UI kit / Web / Figma
+11 / 12
+Voz y escritura
+Voseo en las explicaciones; infinitivos en las acciones. Convenciones del proyecto a validar con personas
+Acción predecible
+Revisar datos
+Evitar: Continuar, OK
+Cap. 3 · Botones
+Vocabulario estable
+Entradas, pasaporte, sellos, recompensas
+Evitar: Tickets, pase y voucher para lo mismo
+Cap. 3 · Voz y tono
+Fecha y hora
+12 de diciembre de 2026 / 8:00 h
+Evitar: 12 de Diciembre / 08:00 hs.
+Cap. 8 · Fechas y tiempo
+Títulos y etiquetas
+Correo electrónico
+Evitar: CORREO ELECTRÓNICO.
+Cap. 3 · Botones; cap. 8 · Puntuación
+Extranjerismo necesario
+Sportswashing: lavado de imagen a través del deporte
+Evitar: Una palabra inglesa sin explicación
+Cap. 8 · Extranjerismos
+Error útil
+Revisá el correo. Usá el formato nombre@dominio.com.
+Evitar: Error 400, algo salió mal
+Cap. 3 · Mensajes de error
+Resultado honesto
+Se solicitó la descarga
+Evitar: Archivo guardado sin poder comprobarlo
+Cap. 3 · Mensajes de error
+Fuente: Diseño de contenidos, Marisol Parnofiello, capítulos 3 y 8
+15 de octubre de 2026
