@@ -1,8 +1,14 @@
 export const EVENT=Object.freeze({
  date:'2026-12-12',label:'Sábado 12 de diciembre de 2026',
- startsAt:'2026-12-12T00:00:00-03:00',endsAt:'2026-12-13T00:00:00-03:00',
- access:'Todo el día',venue:'Club Arquitectura, CABA'
+ startsAt:'2026-12-12T08:00:00-03:00',endsAt:'2026-12-13T00:00:00-03:00',
+ access:'Todo el día',venue:'Club Arquitectura, CABA',
+ address:'Av. Francisco Beiró 2116, CABA',openingHours:'Desde las 08:00 h, sin turnos'
 });
+
+export function visitDetails(event=EVENT){
+ return {address:event.address?.trim()||'Dirección exacta por confirmar',
+  openingHours:event.openingHours?.trim()||'Horario de apertura y cierre por confirmar'};
+}
 
 export function eventCountdown(now=Date.now()){
  const start=Date.parse(EVENT.startsAt),end=Date.parse(EVENT.endsAt);

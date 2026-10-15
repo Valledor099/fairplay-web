@@ -21,7 +21,7 @@ export function initCollection(){
  const viewport=document.querySelector('.collection-window');
  const previous=document.querySelector('[data-collection-prev]'),next=document.querySelector('[data-collection-next]');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- let lastWheel=0;
+ let lastWheel=0,selectedIndex=0;
  const targetLeft=index=>articles[index].offsetLeft+articles[index].offsetWidth/2-viewport.clientWidth/2;
  function currentIndex(){
   let current=0,distance=Infinity;
@@ -29,17 +29,19 @@ export function initCollection(){
   return current;
  }
  function updatePosition(){
+  if(!viewport.clientWidth)return;
   const current=currentIndex();
-  document.querySelector('.collection-current').textContent=String(current+1).padStart(2,'0');
+  selectedIndex=current;
+  document.querySelector('.collection-current').textContent=String(current+1);
   viewport.closest('#recompensas').dataset.product=String(current);
   previous.disabled=current===0;next.disabled=current===cards.length-1;
   articles.forEach((article,i)=>{article.dataset.focused=String(i===current)});
   cards[current].querySelectorAll('img').forEach(img=>img.loading='eager');
  }
  function resize(){
-  const current=currentIndex();
+  if(!viewport.clientWidth)return;
   viewport.style.setProperty('--collection-edge',Math.max(12,(viewport.clientWidth-articles[0].offsetWidth)/2)+'px');
-  viewport.scrollTo({left:targetLeft(current),behavior:'instant'});updatePosition();
+  viewport.scrollTo({left:targetLeft(selectedIndex),behavior:'instant'});updatePosition();
  }
  function scrollTo(index,immediate=reduced.matches){
   viewport.scrollTo({left:targetLeft(Math.max(0,Math.min(cards.length-1,index))),behavior:immediate?'instant':'smooth'});

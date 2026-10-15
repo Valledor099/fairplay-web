@@ -5,6 +5,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import {eventStory,storyDistance} from './event-story.js';
 import {smooth} from './passport-model.js';
 import {WASHING_DISTANCE,washingState} from './sportswashing-state.js';
+import {setActiveSection} from './site-menu.js';
 gsap.registerPlugin(ScrollTrigger);
 export function initMotion({reduced,collection,onFrame}){
  const state={progress:0,washing:0};let paused=false;
@@ -38,8 +39,7 @@ export function initMotion({reduced,collection,onFrame}){
   gsap.to(state,{washing:1,ease:'none',scrollTrigger:{id:'washing-story',trigger:washing,start:'top top',end:'bottom bottom',scrub:.65,invalidateOnRefresh:true}});
   gsap.to(state,{progress:1,ease:'none',scrollTrigger:{id:'event-story',trigger:event,start:'top top',end:'bottom bottom',scrub:.65,invalidateOnRefresh:true}});
  });
- const nav=[...document.querySelectorAll('[data-nav]')];
- const sectionTriggers=['contexto','evento','nosotros','tickets'].map(id=>ScrollTrigger.create({trigger:'#'+id,start:'top 45%',end:'bottom 45%',onToggle:self=>{if(self.isActive&&document.querySelector('#reservation-view').hidden)nav.forEach(link=>{if(link.dataset.nav===id)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})}}));
+ const sectionTriggers=['inicio','contexto','evento','recompensas','nosotros','tickets'].map(id=>ScrollTrigger.create({trigger:'#'+id,start:'top 45%',end:'bottom 45%',onToggle:self=>{if(self.isActive&&document.querySelector('#reservation-view').hidden)setActiveSection(id)}}));
  function scrollTo(target,immediate=false,duration=1.1){const top=typeof target==='number'?target:target.getBoundingClientRect().top+scrollY;if(lenis)lenis.scrollTo(top,{immediate,duration});else window.scrollTo({top,behavior:'instant'})}
  const tick=time=>{
   if(document.hidden)return;lenis?.raf(time*1000);if(paused)return;

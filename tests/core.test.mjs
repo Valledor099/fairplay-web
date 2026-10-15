@@ -60,11 +60,11 @@ test('closing retains every stamp; scrolling back through the zones removes them
 });
 test('single-day reservations only require a valid quantity and keep no date or time selection',()=>{const s=initialBooking();assert.equal(selectionError(s),'');assert.ok(!('date' in s)&&!('time' in s));for(const q of [0,7,1.5,NaN])assert.ok(selectionError({...s,quantity:q}));for(const q of [1,4,6])assert.equal(selectionError({...s,quantity:q}),'')});
 test('contact validation and QR use the fixed all-day event without personal information',()=>{const s={...initialBooking(),name:'Ana Prueba',email:'ana@example.com',accessibility:'Prueba de acceso',date:'2026-11-14',time:'11:00'};assert.deepEqual(contactErrors(s),{name:'',email:''});assert.ok(contactErrors({...s,email:'invalid'}).email);const raw=qrPayload(s,'TEST'),payload=JSON.parse(raw);assert.equal(payload.validForAdmission,false);assert.equal(payload.type,'FAIRPLAY-DEMO');assert.equal(payload.date,EVENT.date);assert.equal(payload.access,'all-day');assert.ok(!('time' in payload));assert.ok(!raw.includes(s.email)&&!raw.includes(s.name)&&!raw.includes(s.accessibility))});
-test('countdown uses Buenos Aires midnight and handles the event day and its end',()=>{
+test('countdown uses the 08:00 Buenos Aires opening time and handles the event day and its end',()=>{
  const start=Date.parse(EVENT.startsAt),end=Date.parse(EVENT.endsAt);
  assert.deepEqual(eventCountdown(start-90061000),{phase:'upcoming',days:1,hours:1,minutes:1,seconds:1});
  assert.deepEqual(eventCountdown(start-1),{phase:'upcoming',days:0,hours:0,minutes:0,seconds:1});
- assert.equal(new Date(EVENT.startsAt).toISOString(),'2026-12-12T03:00:00.000Z');
+ assert.equal(new Date(EVENT.startsAt).toISOString(),'2026-12-12T11:00:00.000Z');
  assert.equal(eventCountdown(start).phase,'today');assert.equal(eventCountdown(end-1).phase,'today');
  assert.deepEqual(eventCountdown(end),{phase:'finished',days:0,hours:0,minutes:0,seconds:0});
 });

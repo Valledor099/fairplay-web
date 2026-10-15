@@ -1,5 +1,5 @@
 import {gsap} from 'gsap';
-import {EVENT,eventCountdown} from './event-config.js';
+import {EVENT,eventCountdown,visitDetails} from './event-config.js';
 
 export function createHeroEntry({reduced=false}={}){
  const panel=document.querySelector('.hero-entry'),timer=panel.querySelector('[role=timer]');
@@ -20,12 +20,15 @@ export function createHeroEntry({reduced=false}={}){
   timer.setAttribute('aria-label',`Faltan ${countdown.days} días, ${countdown.hours} horas, ${countdown.minutes} minutos y ${countdown.seconds} segundos para Fair Play.`);
   if(countdown.phase!==previousPhase){
    previousPhase=countdown.phase;panel.dataset.phase=countdown.phase;
-   status.textContent=countdown.phase==='upcoming'?'El encuentro empieza en':countdown.phase==='today'?'Es hoy. Te esperamos todo el día.':'El encuentro terminó.';
+   status.textContent=countdown.phase==='upcoming'?'El encuentro empieza en':countdown.phase==='today'?'Es hoy. Abierto desde las 08:00 h.':'El encuentro terminó.';
    timer.hidden=countdown.phase!=='upcoming';
    if(countdown.phase!=='upcoming')timer.setAttribute('aria-label',status.textContent);
   }
  }
  document.querySelectorAll('[data-event-date]').forEach(label=>{label.textContent=EVENT.label;label.dateTime=EVENT.date});
+ const visit=visitDetails();
+ document.querySelectorAll('[data-event-address]').forEach(label=>label.textContent=visit.address);
+ document.querySelectorAll('[data-event-hours]').forEach(label=>label.textContent=visit.openingHours);
  render();
  return {render,dispose(){context.revert()}};
 }

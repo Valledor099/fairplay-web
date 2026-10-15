@@ -1,3 +1,30 @@
+## Aplicación del informe de usabilidad · 15 de octubre de 2026
+
+Se agregaron información logística y accesos a «Planificá tu visita», dirección oficial de Club Arquitectura y apertura propuesta a las 08:00 h. Se actualizaron las condiciones de recompensas según la indicación del usuario: compra en el evento o participación en actividades, manteniendo la camiseta por los tres sellos.
+
+La revisión de entradas incorpora accesos específicos para cantidad y correo con foco de retorno; el comprobante identifica visiblemente su carácter de demostración y el nombre del archivo descargable. Los enlaces directos de reserva no esperan a los recursos 3D.
+
+- `node --test tests/*.test.mjs`: 19 aprobadas, ninguna fallida. La comprobación del contador se actualizó a las 08:00 h de Buenos Aires, equivalentes a las 11:00 UTC.
+- Compilación de producción: correcta. Persiste el aviso de tamaño del bundle de Three.js.
+- Servidor local de la compilación: respuesta HTTP 200.
+- Verificación visual e interactiva de esta iteración: pendiente; el navegador integrado no devolvió una vista inspeccionable. No se registran capturas ni éxitos de tareas de esta iteración.
+- No se modificaron los resultados de las pruebas con personas: esas sesiones siguen pendientes.
+
+# Heurísticas y contenidos · 14 de octubre de 2026
+
+- Web principal corregida según el informe heurístico actualizado y los capítulos 3 y 8 de Marisol Parnofiello. La fundamentación por componente y heurística quedó en README.
+- Compilación de producción correcta. Se mantiene la advertencia existente sobre el tamaño del paquete de Three.js.
+- 19 pruebas automáticas aprobadas.
+- Pruebas de navegador sobre la compilación: 1440 × 1000, 390 × 844, 325 × 650 y 1280 × 800 con movimiento reducido. Sin errores de ejecución ni desborde horizontal.
+- Comprobados: errores junto a los campos, foco en el campo inválido, límites de cantidad, edición con datos conservados, cancelación por Escape/continuar y borrado confirmado, progreso de tres pasos, descarga PNG real y regreso mediante historial conservando el QR.
+- Navegación activa en inicio, evento, recompensas y entradas; apertura del pasaporte mediante botón; seis productos recorridos con flechas, extremos deshabilitados y retorno con teclado. Corregido un salto de producto al ocultar y volver a mostrar la página durante una reserva.
+- Fallos de generación y de inicio de descarga provocados desde las APIs del navegador: mensaje de recuperación y reintento correcto, sin perder los datos o el QR. El enlace directo a confirmación sin datos válidos vuelve al formulario.
+- Revisión visual de reserva, comprobante, pasaporte y recompensas. En móvil de poca altura se separó el pasaporte de la lista de estaciones. Las capturas de página completa se toman desde el inicio para evitar que la cabecera fija aparezca sobre el contenido capturado al desplazar.
+- Evidencias locales: `evidence/heuristics-qa.json` y `evidence/heuristics-*.png`; script reproducible: `scripts/qa-heuristics.mjs`.
+- Cambios y compilación guardados localmente. No se publicaron ni se modificaron los repositorios remotos. No se hicieron pruebas con usuarios ni se activó un servicio real de reservas.
+
+Las secciones siguientes documentan versiones anteriores.
+
 # Publicación en Vercel · 8 de octubre de 2026
 
 - Publicado el build estático actual mediante la CLI oficial de Vercel y Build Output API v3: 72 recursos, 28,07 MB. Configuración para Vite en `vercel.json`; directorios de trabajo y credenciales ignorados por Git.

@@ -1,0 +1,78 @@
+/* Ajustes de contenido y usabilidad: informe heurístico + Parnofiello, capítulos 3 y 8. */
+.site-menu summary{width:auto;min-width:82px;gap:12px;padding:0 8px;font-size:13px}
+header.site-header .site-menu nav{width:205px}
+header.site-header .site-menu nav>a{font-size:14px;min-height:44px;display:flex;align-items:center;padding:12px 14px}
+.site-menu nav>a[aria-current=location]{border-left:3px solid #c4d1c8;background:#708d8133;color:#fff;text-decoration:underline;text-underline-offset:5px}
+.event-bottom{gap:24px;align-items:end}
+.event-bottom p{font-size:12px;max-width:none}
+.event-bottom .passport-preview-note{font-size:11px;color:#c4d1c8}
+.passport-actions{display:flex;gap:12px;align-items:center}
+.event-bottom .passport-actions a,.passport-actions button{display:flex;align-items:center;justify-content:center;gap:8px;width:auto;height:auto;min-height:44px;padding:10px 13px;font-size:12px;line-height:1.4;border:1px solid #708d8180;background:#051014e8;color:#fcfcfc}
+.passport-actions button:hover,.passport-actions a:hover{background:#263d37}
+.is-reduced [data-open-passport],.no-webgl [data-open-passport]{display:none}
+.event-copy a{pointer-events:auto}
+.collection-controls{flex-wrap:wrap;justify-content:space-between}
+.collection-controls .collection-entry-link{font-size:13px;text-decoration:underline;text-underline-offset:5px;min-height:44px;display:flex;align-items:center;gap:12px}
+.collection-controls button{width:auto;min-width:44px;min-height:46px;padding:8px 12px;display:inline-flex;align-items:center;gap:12px;font-size:20px}
+.collection-control-label{font-size:12px}
+.collection-caption .product-condition,.has-event-story .collection-caption .product-condition{display:block;font-size:12px;line-height:1.5;color:#fff;background:#051014e8;padding:7px 10px;width:fit-content;max-width:100%;text-shadow:none}
+.passport-help{margin:80px 7vw 20px;padding-top:55px;border-top:1px solid #708d8160;scroll-margin-top:100px;display:grid;grid-template-columns:1fr 1.4fr;gap:35px 70px}
+.passport-help h2{font-size:clamp(32px,4vw,54px);line-height:1.1;margin:15px 0 20px}
+.passport-help p{font-size:14px;line-height:1.7;color:#c4d1c8;max-width:54ch}
+.passport-help ol{margin:0;padding-left:25px;display:flex;flex-direction:column;gap:24px}
+.passport-help li{padding-left:9px}
+.passport-help li::marker{color:#c4d1c8;font-weight:700}
+.passport-help h3{font-family:var(--font-body);font-size:16px;font-weight:600;margin-bottom:8px;line-height:1.5}
+.passport-help .inline-link{justify-self:start;min-height:44px}
+.reservation-card{width:min(760px,100%)}
+.reservation-card h1,.confirmation h1{text-transform:none;font-size:clamp(34px,5vw,48px);line-height:1.1}
+.reservation-card>p,.confirmation>p{font-size:14px;line-height:1.7}
+.reservation-card .notice{font-size:13px;line-height:1.7}
+.booking-progress{margin-bottom:32px;text-align:left}
+.booking-progress>p{font-size:12px;color:#c4d1c8;margin-bottom:12px}
+.booking-progress ol{display:grid;grid-template-columns:1.2fr 1fr .8fr;list-style:none;padding:0;margin:0;gap:10px}
+.booking-progress li{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.4;color:#a9bfb4;border-bottom:2px solid #708d814d;padding-bottom:14px}
+.booking-progress li>span:first-child{width:25px;height:25px;flex:none;display:grid;place-items:center;border:1px solid #708d8180;border-radius:50%;font-size:12px}
+.booking-progress li[aria-current=step]{color:#fcfcfc;font-weight:700;border-color:#c4d1c8}
+.booking-progress li[aria-current=step]>span:first-child{background:#c4d1c8;color:#051014}
+.booking-progress .is-complete{border-color:#708d81}
+.required-hint{margin-bottom:20px;max-width:50ch}
+.field label{font-size:14px;line-height:1.5}
+.field input,.field textarea{font-size:16px;line-height:1.5;padding:13px 14px}
+.field-error,.hint,.quantity-field small{font-size:13px;line-height:1.6}
+.field-error:empty{display:none}
+.field input[aria-invalid=true]{border-color:#f2b7a8}
+.counter button{width:44px;height:44px}
+.reservation-actions{flex-wrap:wrap}
+.reservation-actions .button{font-size:14px;min-height:48px;line-height:1.4;text-transform:none;text-align:center;justify-content:center}
+.booking-text-button{display:inline-flex;align-items:center;min-height:44px;margin-top:18px;padding:5px 0;border:0;border-bottom:1px solid #708d8180;background:none;color:#c4d1c8;font-size:13px;text-decoration:none}
+.booking-text-button:hover{color:white;border-color:white}
+.review-data>div{font-size:14px;line-height:1.6}
+.confirmation .arrival{text-align:left;border-top:1px solid #708d8155;padding-top:24px;margin-top:24px}
+.arrival h2{font-family:var(--font-body);font-size:18px;line-height:1.4;font-weight:600;margin-bottom:12px;letter-spacing:0}
+.arrival p{font-size:14px;line-height:1.7;margin-top:12px;color:#c4d1c8}
+.booking-dialog{width:min(560px,calc(100% - 32px));padding:30px;border:1px solid #708d81;background:#0c2228;color:#fcfcfc}
+.booking-dialog::backdrop{background:#051014cc;backdrop-filter:blur(4px)}
+.booking-dialog h2{font-size:32px;line-height:1.2;letter-spacing:0;margin-bottom:18px}
+.booking-dialog p{font-size:14px;line-height:1.7}
+.booking-dialog .reservation-actions{justify-content:start}
+@media(max-width:700px){
+ .passport-help{display:block;margin-top:55px;padding-top:36px}.passport-help ol{margin:28px 0}.passport-help h2{font-size:36px}
+ .collection-controls{gap:10px}.collection-controls>div{gap:6px}.collection-controls button{padding:8px;gap:5px}.collection-control-label{font-size:11px}
+ .event-bottom{display:block;bottom:16px}.event-bottom p{font-size:11px;line-height:1.5}.event-bottom .passport-preview-note{font-size:10px}
+ .passport-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+ .event-bottom .passport-actions a,.passport-actions button{font-size:11px;text-align:center;padding:8px;min-height:48px}
+ .is-reduced .passport-actions,.no-webgl .passport-actions{grid-template-columns:1fr 1fr}
+ .collection-controls .collection-entry-link{font-size:12px}.collection-controls>p{font-size:12px}
+ .reservation-card{padding:28px 20px}.reservation-card .notice{font-size:13px}
+ .booking-progress ol{grid-template-columns:1.2fr 1fr .8fr;gap:6px}.booking-progress li{font-size:11px;gap:6px;align-items:start}.booking-progress li>span:first-child{width:21px;height:21px}
+ .reservation-actions{gap:10px}.reservation-actions .button{font-size:14px;padding:14px 16px}
+ .review-data>div{grid-template-columns:1fr 1.2fr;font-size:13px;gap:15px}
+ .quantity-field>div>p:first-child{font-size:22px}.counter{gap:10px}
+ .booking-dialog{padding:25px 20px}.booking-dialog .reservation-actions{display:grid}
+}
+@media(max-width:360px){.collection-controls .collection-entry-link{order:3;width:100%}.booking-progress li{flex-direction:column}.quantity-field{align-items:start}.counter{gap:8px}.counter button{width:40px}}
+@media(max-width:600px) and (max-height:700px){
+ #passport-scene{bottom:40px}
+ .route-steps{top:calc(100svh - 268px)}
+}
