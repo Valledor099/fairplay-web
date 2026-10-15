@@ -42,6 +42,10 @@ try{
   await page.locator('#booking-form [type=submit]').click();
   await page.locator('[data-cancel]').click();
   assert.equal(await page.locator('dialog').isVisible(),true);
+  assert.equal(await page.locator('dialog [value=continue]').evaluate(el=>el===document.activeElement),true);
+  assert.equal(await page.locator('dialog [value=cancel]').getAttribute('class'),'button');
+  await page.keyboard.press('Shift+Tab');assert.equal(await page.locator('dialog [value=cancel]').evaluate(el=>el===document.activeElement),true);
+  await page.keyboard.press('Tab');assert.equal(await page.locator('dialog [value=continue]').evaluate(el=>el===document.activeElement),true);
   await page.keyboard.press('Escape');await page.locator('dialog').waitFor({state:'detached'});
   assert.match(await page.locator('.review-data').innerText(),/Ana Prueba/);
   await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:`evidence/heuristics-${config.name}-review.png`,fullPage:true});await noOverflow(page);

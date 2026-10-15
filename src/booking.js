@@ -1,6 +1,7 @@
 import QRCode from 'qrcode';
 import {initialBooking,selectionError,contactErrors,qrPayload} from './booking-model.js';
 import {EVENT,visitDetails} from './event-config.js';
+import {bookingSteps,cancellationDialogContent,keepDialogFocus} from './booking-components.js';
 const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const bookingRoutes=['#entradas','#revision','#confirmacion'];
 
@@ -9,7 +10,7 @@ export function initBooking({navigate}){
  const container=document.querySelector('#reservation-content');
  const notice=()=>'<p class="notice">Esta es una demostración: no se reserva un lugar ni se envía un correo. El QR no tiene validez de ingreso.</p>';
  function steps(current){
-  return `<nav class="booking-progress" aria-label="Pasos para obtener entradas"><p>Paso ${current+1} de 3</p><ol>${['Datos y cantidad','Revisión','Entrada'].map((label,i)=>`<li${i===current?' aria-current="step"':''}${i<current?' class="is-complete"':''}><span aria-hidden="true">${i<current?'✓':i+1}</span>${label}${i<current?'<span class="sr-only">, completado</span>':''}</li>`).join('')}</ol></nav>`;
+  return bookingSteps(current);
  }
  function focusTitle(){container.querySelector('h1')?.focus({preventScroll:true})}
  function screen(current,content){container.innerHTML=`<section class="reservation-card"><p class="booking-kind">Solicitud de demostración</p>${steps(current)}${content}</section>`;focusTitle()}
@@ -70,7 +71,8 @@ export function initBooking({navigate}){
  function cancel(){
   const dialog=document.createElement('dialog');dialog.className='booking-dialog';
   dialog.setAttribute('aria-labelledby','cancel-title');dialog.setAttribute('aria-describedby','cancel-description');
-  dialog.innerHTML='<h2 id="cancel-title">¿Querés cancelar la solicitud?</h2><p id="cancel-description">Se borrarán la cantidad y los datos que ingresaste en esta demostración.</p><form method="dialog" class="reservation-actions"><button class="button" value="continue" autofocus>Seguir con la solicitud</button><button class="button secondary" value="cancel">Borrar y volver al evento</button></form>';
+  dialog.innerHTML=cancellationDialogContent();
+  keepDialogFocus(dialog);
   const origin=container.querySelector('[data-cancel]');
   dialog.addEventListener('close',()=>{const discard=dialog.returnValue==='cancel';dialog.remove();if(discard){state=initialBooking();errors={};selection='';code=qr='';navigate('#tickets')}else origin?.focus()},{once:true});
   container.append(dialog);dialog.showModal();

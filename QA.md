@@ -1,3 +1,21 @@
+## UI kit y revisión de contenidos · 15 de octubre de 2026
+
+Validación final de la biblioteca `/ui-kit.html` y de la web original sobre la compilación de producción:
+
+- `npm test`: 19 pruebas aprobadas, ninguna fallida.
+- `npm run build`: las dos páginas compilan correctamente. Persiste la advertencia previa de tamaño del bundle de Three.js; el kit no ejecuta la escena 3D.
+- `scripts/qa-ui-kit.mjs`: aprobado en 1440 × 1000, 390 × 844, 325 × 650 y 1280 × 800 con movimiento reducido. Ocho muestras de color, descarga JSON de tokens con valores reales, destinos del índice, validación/foco, límites de cantidad, limpieza de formulario y tres estados de progreso correctos.
+- Diálogo compartido: foco inicial en conservar la solicitud, Tab y Shift+Tab circulares, confirmación de borrado, Escape y retorno al control de origen comprobados en el kit y la reserva.
+- `scripts/qa-heuristics.mjs`: recorrido original aprobado en los cuatro tamaños/modos. Datos inválidos, límites, edición sin pérdida de datos, cancelación reversible, descarga PNG, historial que conserva el QR, navegación, vista previa del pasaporte y seis productos con flechas/extremos/teclado correctos. También se probaron fallos provocados de generación y descarga con reintento, y el acceso directo a confirmación sin datos.
+- Sin errores de ejecución ni desborde horizontal en los escenarios probados. El kit no presentó recursos con respuesta HTTP de error.
+- Revisión visual de capturas actuales: portada del kit en escritorio y móvil, formulario con error/foco, diálogo móvil y de escritorio, revisión de entradas móvil y recompensas de escritorio. Se conservaron la marca, las fotografías y las composiciones existentes.
+- Se corrigió durante la implementación una inversión de orden en los estilos compartidos que superponía los controles de la galería en producción. `site-styles.js` reúne la secuencia común y la prueba final confirma el recorrido de los seis productos.
+- Evidencias locales actuales: `evidence/ui-kit-qa.json`, `evidence/ui-kit-*.png`, `evidence/heuristics-qa.json` y `evidence/heuristics-*.png`. Las capturas y JSON están excluidos de Git.
+
+Los desvíos del libro y su resolución están en `design/ui-kit.md` y en la tabla «Del libro a la interfaz» del kit. Se usó el extracto local de los capítulos 3 y 8; no se atribuye al libro la estética visual. Son comprobaciones técnicas y revisión visual, sin pruebas con participantes ni evaluación completa con lectores de pantalla. El QR mantiene su carácter de demostración.
+
+Las secciones siguientes documentan versiones anteriores.
+
 ## Aplicación del informe de usabilidad · 15 de octubre de 2026
 
 Se agregaron información logística y accesos a «Planificá tu visita», dirección oficial de Club Arquitectura y apertura propuesta a las 08:00 h. Se actualizaron las condiciones de recompensas según la indicación del usuario: compra en el evento o participación en actividades, manteniendo la camiseta por los tres sellos.

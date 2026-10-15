@@ -1,0 +1,34 @@
+/* Las decisiones visuales son de Fair Play; las reglas de contenido se documentan en el UI kit. */
+:root {
+ --ui-surface: var(--noche);
+ --ui-surface-raised: #0c2228;
+ --ui-text: var(--papel);
+ --ui-text-muted: #c4d1c8;
+ --ui-action: var(--salvia);
+ --ui-action-hover: #96b5a6;
+ --ui-error: #f2b7a8;
+ --ui-focus: #c4d1c8;
+ --ui-border: #708d8180;
+ --ui-space-1: 4px;
+ --ui-space-2: 8px;
+ --ui-space-3: 12px;
+ --ui-space-4: 16px;
+ --ui-space-6: 24px;
+ --ui-space-8: 32px;
+ --ui-space-12: 48px;
+ --ui-control-height: 48px;
+ --ui-radius: 4px;
+}
+.button {background:var(--ui-action);color:var(--ui-surface);border-color:var(--ui-action);text-transform:none}
+.button:hover {background:var(--ui-action-hover)}
+.button.secondary {background:transparent;color:var(--ui-text);border-color:var(--ui-border)}
+.button.secondary:hover {background:#708d8126}
+.button:disabled {opacity:.45;cursor:not-allowed;transform:none}
+.field-error {color:var(--ui-error)}
+.field input[aria-invalid=true] {border-color:var(--ui-error)}
+.booking-dialog {background:var(--ui-surface-raised);border-color:var(--ui-action)}
+.booking-dialog h2 {text-transform:none}
+.booking-dialog .reservation-actions {justify-content:flex-end}
+.button:focus-visible,.field input:focus-visible,.field textarea:focus-visible {outline:2px solid var(--ui-focus);outline-offset:4px;box-shadow:0 0 0 4px var(--ui-surface)}
+.visit-details dt {text-transform:none;letter-spacing:0;font-size:13px}
+@media(prefers-reduced-motion:reduce){.button{transition:none}.button:hover{transform:none}}
