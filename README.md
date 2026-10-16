@@ -1,5 +1,11 @@
 # FAIR PLAY
 
+## Carrusel de recompensas · 16 de octubre de 2026
+
+Tarjetas de hasta 400 px de ancho en escritorio y 300 px en móvil, con separación y tipografía ajustadas. La rueda del mouse desplaza horizontalmente las recompensas de forma continua, sin saltos forzados ni bloqueo entre pulsaciones. Al llegar a cualquiera de los extremos, la rueda vuelve a desplazar la página mediante Lenis. Los gestos horizontales se mantienen nativos dentro de la galería. Se puede arrastrar con el mouse sin activar la foto al soltar. Flechas y teclado acumulan los destinos de pulsaciones rápidas y los refrescos de la página sin cambios de tamaño conservan la posición.
+
+Validación: 19 pruebas aprobadas, compilación correcta y `scripts/qa-horizontal-collection.mjs` aprobado en 1440 × 900, 390 × 844, 325 × 650 y 1280 × 800 con movimiento reducido. Se comprobaron las seis recompensas, extremos, clics rápidos, teclado, arrastre, gesto táctil, rueda horizontal y vertical, acumulación de pulsaciones pequeñas, salida vertical por ambos extremos y refresco. Evidencias en `evidence/rewards-compact-*`. Cambios locales.
+
 ## UI kit en SVG para Figma · 15 de octubre de 2026
 
 El UI kit se entrega en [design/ui-kit-svg](design/ui-kit-svg/): 12 láminas SVG con texto en curvas, 12 versiones con elementos de texto, fuentes y licencias, textos copiables y tokens. La página del kit y su enlace en el pie fueron retirados de la web a pedido del usuario.
@@ -40,7 +46,7 @@ Portada interactiva con acceso animado a entradas y contador → explicación de
 
 La explicación muestra cómo el prestigio deportivo puede ocultar otras historias. Sus ejemplos —F1 en Arabia Saudita, Six Kings Slam y Argentina 1978— muestran una fotografía local al pasar el cursor o recibir foco, y enlazan a sus fuentes. En móvil, «Ver imagen» permite abrir y cerrar la vista previa. `src/sportswashing-cases-data.js` conserva sus destinos y créditos.
 
-El pasaporte se abre, recibe tres sellos y se cierra con el scroll. A continuación, las seis recompensas aparecen como tarjetas fotográficas grandes en una galería horizontal independiente. Deslizar, usar la rueda o las flechas permite pasar de una en una, con la selección centrada. Hover, toque o teclado muestran la fotografía de uso del producto.
+El pasaporte se abre, recibe tres sellos y se cierra con el scroll. A continuación, las seis recompensas aparecen como tarjetas fotográficas compactas en una galería horizontal independiente. Deslizar horizontalmente, arrastrar con el mouse o usar las flechas permite recorrerlas. La rueda del mouse recorre las recompensas y continúa por la página al llegar a un extremo. Hover, toque o teclado muestran la fotografía de uso del producto.
 
 Las animaciones respetan movimiento reducido. Sin JavaScript hay contenido legible; sin WebGL se conserva la imagen alternativa del pasaporte.
 

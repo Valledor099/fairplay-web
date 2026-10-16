@@ -1,3 +1,12 @@
+## Carrusel compacto de recompensas · 16 de octubre de 2026
+
+- 19 pruebas existentes aprobadas; compilación correcta. Se mantiene el aviso previo de tamaño del paquete de Three.js.
+- `scripts/qa-horizontal-collection.mjs`: aprobado en escritorio (1440 × 900), móvil (390 × 844), móvil pequeño (325 × 650) y movimiento reducido (1280 × 800).
+- Tarjetas comprobadas: 400 × 533,3 px en escritorio, 296,4 × 395,2 px en móvil y 247 × 329,3 px en móvil pequeño.
+- Seis productos recorridos con flechas y teclado; extremos deshabilitados; clics rápidos acumulados; rueda horizontal, arrastre con mouse sin clic involuntario y gesto táctil comprobados.
+- La rueda vertical desplaza las recompensas horizontalmente y acumula las pulsaciones pequeñas sin volver al producto anterior. Ambos extremos liberan el desplazamiento vertical de la página. Refrescar sin cambiar dimensiones conserva la posición. Sin errores de ejecución ni desborde horizontal.
+- Resultados en `evidence/rewards-compact-qa.json` y capturas `evidence/rewards-compact-*.png`. Comprobaciones técnicas, sin sesiones con participantes. Cambios guardados localmente.
+
 ## Retiro del kit web y entrega SVG · 15 de octubre de 2026
 
 - Se retiraron `ui-kit.html`, sus estilos, su módulo y su prueba específica. Se quitó el enlace del pie y se devolvió Vite a una sola entrada. Se conservan las correcciones de contenido y del diálogo de reserva.
